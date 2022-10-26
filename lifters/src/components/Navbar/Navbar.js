@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link }  from 'react-router-dom'
+import { FaBars } from 'react-icons/fa'
 import './Navbar.css'
 
 function IntroNavbar() {
@@ -12,10 +13,15 @@ function IntroNavbar() {
                 Lifters Journal
             </Link>
             
-            <div className='navbar-intro'>
-              <Link to="/" className='navbar-home'>Home</Link>
-              <Link to="/aboutus" className='navbar-about-us'>About Us</Link>
-              <Link to="/information" className='navbar-information'>Information</Link>
+            <div className='navbar-intro-container'>
+              <ul className='navbar-intro-menu'>
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Information</li>
+              </ul>
+              <div className='hamburger'>
+                <FaBars />
+              </div>
             </div>
         </div>
       </nav> 

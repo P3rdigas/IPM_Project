@@ -1,5 +1,5 @@
 .navbar {
-    background-color: black;
+    background-color: rgb(100, 96, 96);
     height: 80px;
     display: flex;
     top: 0;
@@ -8,6 +8,7 @@
 .navbar-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-logo {
@@ -22,30 +23,15 @@
     font-family: "Lucida Console", monospace;
 }
 
-.navbar-intro {
+.navbar-intro-menu {
     display: flex;
-    column-gap: 30px;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem;
 }
 
-.navbar-home {
-    font-size: 1em;
+.navbar-intro-menu li {
+    padding: 1rem;
+    font-size: 1.75em;
     color: white;
-    text-decoration: none;
     font-family: "Lucida Console", monospace;
 }
 
-.navbar-about-us {
-    font-size: 1em;
-    color: white;
-    text-decoration: none;
-    font-family: "Lucida Console", monospace;
-}
-
-.navbar-information {
-    font-size: 1em;
-    color: white;
-    text-decoration: none;
-    font-family: "Lucida Console", monospace;
-}
