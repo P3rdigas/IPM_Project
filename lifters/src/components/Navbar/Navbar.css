@@ -1,0 +1,51 @@
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    top: 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    display: flex;
+    column-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 1.75em;
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.navbar-intro {
+    display: flex;
+    column-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-home {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.navbar-about-us {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.navbar-information {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+}
