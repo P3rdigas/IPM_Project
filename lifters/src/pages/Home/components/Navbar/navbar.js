@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <div className='header'>
       <nav className='navbar'>
-        <LinkScroll to="hero" className='navbar-logo' spy={true} smooth={true} offset={50} duration={500}>
+        <LinkScroll to="hero" className='navbar-logo' spy={true} smooth={true} offset={0} duration={500}>
             <img src={Logo} alt="Logo" width={64} height={71}/>  {/* Width = 0.9 * Height */}
             Lifters Journal
         </LinkScroll>   

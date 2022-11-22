@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import nova from '../../../../images/nova_icon.png'
 import user1 from '../../../../images/user1.png'
