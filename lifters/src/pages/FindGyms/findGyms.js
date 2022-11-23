@@ -22,7 +22,7 @@ function FindGyms() {
 
                     <button className='findgyms-input-location-button'>
                         <BiCurrentLocation className='findgyms-input-location-icon'/>
-                        Search in your location
+                        <span>Search in your location</span>
                     </button>
                 </div>
             </div>

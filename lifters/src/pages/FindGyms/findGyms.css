@@ -18,6 +18,7 @@
 
 .findgyms-input-location {
     display: flex;
+    align-items: center;
     padding-top: 10px;
     gap: 25px;
 }
@@ -49,4 +50,36 @@
 .findgyms-input-city-input:hover {
 	outline: none;
 	border-bottom-color: rgb(226, 160, 17);
+}
+
+.findgyms-input-location-button {
+    height: 10%;
+    background: #fff;
+	font-size: 1rem;
+	margin-top: 10px;
+	padding: 10px 20px;
+	border-radius: 26px;
+	border: 1px solid rgb(100, 96, 96);
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	color: rgb(100, 96, 96);
+	box-shadow: 0px 2px 2px rgb(100, 96, 96);
+	cursor: pointer;
+	transition: .2s;
+}
+
+.findgyms-input-location-button:active,
+.findgyms-input-location-button:focus,
+.findgyms-input-location-button:hover {
+    box-shadow: 0px 2px 2px rgb(226, 160, 17);
+	border-color: rgb(226, 160, 17);
+	outline: none;
+}
+
+.findgyms-input-location-icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: rgb(100, 96, 96);
 }
