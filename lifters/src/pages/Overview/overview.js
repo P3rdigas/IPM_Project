@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/Navbar2/navbar2'
+import Navbar from '../../components/Navbar/navbar'
 import SavedWorkouts from './components/SavedWorkouts/savedWorkouts'
 
 
@@ -7,7 +7,7 @@ import './overview.css'
 
 function Overview() {
     return(
-        <div>
+        <div id='overview'>
             <Navbar />
             <SavedWorkouts />                                   
         </div>

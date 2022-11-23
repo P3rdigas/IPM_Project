@@ -1,5 +1,5 @@
 
- .header2 {
+ .header {
     position: fixed;
     height: 90px;
     width: 100%;
@@ -11,7 +11,7 @@
     background-color: rgba(0,0,0,.9);
  }
  
- .navbar2 {
+ .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +20,7 @@
     padding: 0 1rem;
 }
 
-.navbar2-logo {
+.navbar-logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,30 +54,6 @@
     color: white;
     font-size: 1.25em;
     font-family: "Lucida Console", monospace;
-}
-
-.navbar-menu-login-item {
-    padding: 2rem;
-}
-
-.navbar-menu-login-item-text {
-    position: relative;
-
-   padding: 0.75rem;
-
-    background-color: rgb(226, 160, 17);
-    border: 1px solid rgb(226, 160, 17);
-    border-radius: 10px;
-
-    text-decoration: none;
-    color: white;
-    font-size: 1.25em;
-    font-family: "Lucida Console", monospace;
-}
-
-.navbar-menu-login-item-text:hover {
-    background-color: rgb(155, 109, 9);
-    border: 1px solid rgb(155, 109, 9);
 }
 
 /*VERSAO MAIS SIMPLES DO HOVER*/
@@ -136,23 +112,5 @@
 
     .navbar-menu-item {
         margin: 1.5rem 0;
-    }
-
-    .navbar-menu-login-item {
-        background-color: rgb(226, 160, 17, 0.9);
-    }
-
-    .navbar-menu-login-item:hover {
-        background-color: rgb(155, 109, 9, 0.9);
-    }
-    
-    .navbar-menu-login-item-text {
-        background-color: transparent;
-        border: 0px;
-    }
-
-    .navbar-menu-login-item-text:hover {
-        background-color: transparent;
-        border: 0px;
     }
 }
