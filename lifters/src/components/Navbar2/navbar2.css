@@ -1,0 +1,158 @@
+
+ .header2 {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: .3s ease-in;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.9);
+ }
+ 
+ .navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.navbar2-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 1rem;
+    font-size: 1.75em;
+    color: white;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.icons-menu {
+    display: none;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style-type: none; 
+}
+
+.navbar-menu-item {
+    padding: 2rem;
+    font-weight: 500;    
+}
+
+.navbar-menu-item-link {
+    display: inline-block;
+    position: relative;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.25em;
+    font-family: "Lucida Console", monospace;
+}
+
+.navbar-menu-login-item {
+    padding: 2rem;
+}
+
+.navbar-menu-login-item-text {
+    position: relative;
+
+   padding: 0.75rem;
+
+    background-color: rgb(226, 160, 17);
+    border: 1px solid rgb(226, 160, 17);
+    border-radius: 10px;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.25em;
+    font-family: "Lucida Console", monospace;
+}
+
+.navbar-menu-login-item-text:hover {
+    background-color: rgb(155, 109, 9);
+    border: 1px solid rgb(155, 109, 9);
+}
+
+/*VERSAO MAIS SIMPLES DO HOVER*/
+/*Basta apagar o display e positon do .navbar-menu-item-link e os dois estilos( .navbar-menu-item-link:after e .navbar-menu-item-link:hover:after)*/
+/*.navbar-menu-item-link:hover {
+    padding-bottom: 12px;
+    border-bottom: 3px solid rgb(226, 160, 17);
+}*/
+
+.navbar-menu-item-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(226, 160, 17);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-menu-item-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+@media screen and (max-width: 960px) {
+    
+
+    .navbar {
+        max-width: 100%;
+        background-color: rgba(0,0,0,.9);
+    }
+
+    .icons-menu {
+        display: block;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        left: -100%;
+        top: 90px;
+        flex-direction: column;
+        background-color: rgba(0,0,0,.9);
+        width: 100%;
+        height: 90hv;
+        text-align: center;
+        transition: .3s;
+        z-index: 999;
+    }
+
+    .navbar-menu.active {
+        left: 0;
+    }
+
+    .navbar-menu-item {
+        margin: 1.5rem 0;
+    }
+
+    .navbar-menu-login-item {
+        background-color: rgb(226, 160, 17, 0.9);
+    }
+
+    .navbar-menu-login-item:hover {
+        background-color: rgb(155, 109, 9, 0.9);
+    }
+    
+    .navbar-menu-login-item-text {
+        background-color: transparent;
+        border: 0px;
+    }
+
+    .navbar-menu-login-item-text:hover {
+        background-color: transparent;
+        border: 0px;
+    }
+}

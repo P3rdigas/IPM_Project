@@ -8,7 +8,7 @@ import './loginPage.css'
 function LoginPage() {
     return(
         <div>
-            <Route exact path="/" element={<LoginBox />}/>
+            <LoginBox />
         </div>
     )
 }

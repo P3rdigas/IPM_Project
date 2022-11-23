@@ -1,0 +1,58 @@
+.saved-wo-title {
+    width: 1240px;
+    margin: 4rem auto;
+    padding: 3.5rem 6rem;
+}
+
+
+.saved-wo-title h2 {
+    font-size: 3rem;
+}
+
+.card1 {
+    position: absolute;
+    top: 30%;
+    left: 2%;
+}
+
+.card2 {
+    position: absolute;
+    top: 30%;
+    left: 28%;
+}
+
+.card3 {
+    position: absolute;
+    top: 75%;
+    left: 2%;
+}
+
+.card4 {
+    position: absolute;
+    top: 75%;
+    left: 28%;
+}
+
+.card5 {
+    position: absolute;
+    top: 120%;
+    left: 2%;
+}
+
+.card6 {
+    position: absolute;
+    top: 120%;
+    left: 28%;
+}
+
+.card7 {
+    position: absolute;
+    top: 165%;
+    left: 2%;
+}
+
+.card8 {
+    position: absolute;
+    top: 165%;
+    left: 28%;
+}
