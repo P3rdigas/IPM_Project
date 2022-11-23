@@ -9,50 +9,51 @@
     font-size: 3rem;
 }
 
+.all-cards {
+    position: absolute;
+    top: 200px;
+    left: 2%;
+}
+
 .card1 {
     position: absolute;
-    top: 30%;
-    left: 2%;
 }
 
 .card2 {
     position: absolute;
-    top: 30%;
-    left: 28%;
+    left: 300px;
 }
 
 .card3 {
     position: absolute;
-    top: 75%;
-    left: 2%;
+    top: 260px;
 }
 
 .card4 {
     position: absolute;
-    top: 75%;
-    left: 28%;
+    left: 300px;
+    top: 260px;
 }
 
 .card5 {
     position: absolute;
-    top: 120%;
-    left: 2%;
+    top: 520px;
+
 }
 
 .card6 {
     position: absolute;
-    top: 120%;
-    left: 28%;
+    left: 300px;
+    top: 520px;
 }
 
 .card7 {
     position: absolute;
-    top: 165%;
-    left: 2%;
+    top: 780px;
 }
 
 .card8 {
     position: absolute;
-    top: 165%;
-    left: 28%;
+    left: 300px;
+    top: 780px;
 }
