@@ -1,23 +1,16 @@
 
- .header {
-    position: fixed;
-    height: 90px;
-    width: 100%;
+ .navbar {
     top: 0;
     left: 0;
-    z-index: 1;
-    transition: .3s ease-in;
-    overflow: hidden;
-    background-color: rgba(0,0,0,.9);
- }
- 
- .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(0,0,0,.9);
+    height: 90px;
+    width: 100%;
     margin: auto;
-    height: 100%;
     padding: 0 1rem;
+    transition: .3s ease-in;
 }
 
 .navbar-logo {

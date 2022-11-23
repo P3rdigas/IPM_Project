@@ -6,7 +6,7 @@ function SavedWorkouts() {
     return (
         <div className='saved-wo'>
             <div class='saved-wo-title'>
-                <h2>Your Saved Workouts</h2>
+            <h2>Your Saved Workouts</h2>
             </div>
             <div className='all-cards'>
                 <div className='card1'>
