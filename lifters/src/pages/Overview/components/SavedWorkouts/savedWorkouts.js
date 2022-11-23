@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CardGym from './components/cardGym';
+import CardGym from "../Card/cardGym";
 import './savedWorkouts.css'
 function SavedWorkouts() {
     return (

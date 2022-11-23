@@ -1,0 +1,156 @@
+.register {
+    color: rgb(170, 170, 170);
+    height: 100vh;
+    width: 100vw;
+    
+}
+
+.content-register {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.register-back-link {
+    width: 50px;
+    height: 50px;
+    left: 50px;
+    top: 50px;
+    position: absolute;
+}
+
+.register-back-icon {
+    height: 50px;
+    width: 50px;
+    color: rgba(255, 0, 0, 0.493);
+}
+
+.paper-style-register {
+    height:70%;
+    width:70%;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.register-form {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box-elements {
+    width: 100%;
+    height: 75%;
+    align-items: center;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10%;
+}
+
+.register-left-colum {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.register-right-colum {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.register-form-field {
+    padding: 20px 0px;
+    position: relative;
+}
+
+.register-form-icon {
+    position: absolute;
+    top: 30px;
+    color: rgb(100, 96, 96);
+}
+
+.register-form-input {
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    font-weight: 700;
+    font-family: "Lucida Console";
+    font-size: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.register-form-input:active,
+.register-form-input:focus,
+.register-form-input:hover {
+    outline: none;
+    border-bottom-color: rgb(226, 160, 17);
+}
+
+.register-form-password-icon {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    color: rgb(100, 96, 96);
+    cursor: pointer;
+}
+
+.profile-photo-circle{
+    width: 100px;
+    height: 100px;
+    color: rgb(170, 170, 170);
+    margin: auto;
+}
+
+.gender-title-register {
+    font-family: "Lucida Console";
+    font-weight: 700;
+    font-size: 100%;
+    width: 100%;
+}
+
+.gender-option-register {
+    font-family: "Adelle Sans Devanagari";
+}
+
+.register-form-button {
+    background: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 26px;
+    border: 1px solid rgb(100, 96, 96);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    color: rgb(100, 96, 96);
+    box-shadow: 0px 2px 2px rgb(100, 96, 96);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.register-form-button:focus,
+.register-form-button:active,
+.register-form-button:hover {
+    border-color: rgb(226, 160, 17);
+    outline: none;
+}
+
+.register-form-button-icon {
+    font-size: 24px;
+    margin-left: auto;
+    color: rgb(100, 96, 96);
+}
