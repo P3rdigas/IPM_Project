@@ -23,31 +23,30 @@
 }
 
 .findgyms-input-city-field {
-	/*padding: 20px 0px;	
-	position: relative;*/	
+	padding: 20px 0px;	
+	position: relative;	
 }
 
 .findgyms-input-city-icon {
-    color: rgb(100, 96, 96);
-	/*position: absolute;
+	position: absolute;
 	top: 30px;
-	color: rgb(100, 96, 96);*/
+	color: rgb(100, 96, 96);
 }
 
-.findgyms-input-city-icon{
-	/*border: none;
+.findgyms-input-city-input{
+	border: none;
 	border-bottom: 2px solid #D1D1D4;
 	background: none;
 	padding: 10px;
 	padding-left: 24px;
 	font-weight: 700;
 	width: 100%;
-	transition: 0.5s;*/
+	transition: 0.5s;
 }
 
-.findgyms-input-city-icon:active,
-.findgyms-input-city-icon:focus,
-.findgyms-input-city-icon:hover {
-	/*outline: none;
-	border-bottom-color: rgb(226, 160, 17);*/
+.findgyms-input-city-input:active,
+.findgyms-input-city-input:focus,
+.findgyms-input-city-input:hover {
+	outline: none;
+	border-bottom-color: rgb(226, 160, 17);
 }
