@@ -29,8 +29,19 @@
     left:10px;
     width: 12%;
     height: 12%;
+    cursor:pointer;
 }
 
+.workout-card-discard:hover {
+    position: relative;
+    top: -40px;
+    left:10px;
+    width: 12%;
+    height: 12%;
+    transform: scale(1.1);
+    transition: 0.5s;
+    
+}
 
 @media screen and (max-width:1400px) {
 
