@@ -1,7 +1,21 @@
+.all-cards {
+    position: absolute;
+    top: 50px;
+    left: 2%;
+
+}
+.carddd {
+    transition: 0.3s;
+    animation: ease-in-out
+}
+.carddd:houver {
+    transform: scale(1.1);
+}
+
 .saved-wo-title {
-    width: 1240px;
+    width: 600px;
     margin: 4rem auto;
-    padding: 3.5rem 6rem;
+    padding: 0rem 4rem;
 }
 
 
@@ -9,51 +23,153 @@
     font-size: 3rem;
 }
 
-.all-cards {
-    position: absolute;
-    top: 200px;
-    left: 2%;
+.workout-card-discard {
+    position: relative;
+    top: -40px;
+    left:10px;
+    width: 12%;
+    height: 12%;
 }
 
-.card1 {
-    position: absolute;
+
+@media screen and (max-width:1400px) {
+
+    .card0 {
+        position: absolute;
+    }
+    
+    .card1 {
+        position: absolute;
+        left: 300px;
+    }
+    
+    .card2 {
+        position: absolute;
+        top: 440px;
+    }
+    
+    .card3 {
+        position: absolute;
+        left: 300px;
+        top: 440px;
+    }
+    
+    .card4 {
+        position: absolute;
+        top: 700px;
+    
+    }
+    
+    .card5 {
+        position: absolute;
+        left: 300px;
+        top: 700px;
+    }
+    
+    .card6 {
+        position: absolute;
+        top: 960px;
+    }
+    
+    .card7 {
+        position: absolute;
+        left: 300px;
+        top: 960px;
+    
+    }
 }
 
-.card2 {
-    position: absolute;
-    left: 300px;
+@media screen and ((min-width:1400px) and (max-width:1900px)) {
+
+    .card0 {
+        position: absolute;
+    }
+    
+    .card1 {
+        position: absolute;
+        left: 300px;
+    }
+    
+    .card2 {
+        position: absolute;
+        left: 600px;
+    }
+    
+    .card3 {
+        position: absolute;
+        top: 440px;
+    }
+    
+    .card4 {
+        position: absolute;
+        top: 440px;
+        left: 300px;
+    
+    }
+    
+    .card5 {
+        position: absolute;
+        top: 440px;
+        left: 600px;
+    }
+    
+    .card6 {
+        position: absolute;
+        top: 700px;
+    }
+    
+    .card7 {
+        position: absolute;
+        left: 300px;
+        top: 700px;
+    
+    }
 }
 
-.card3 {
-    position: absolute;
-    top: 260px;
+@media screen and ((min-width:1900px) and (max-width:2900px)) {
+
+    .card0 {
+        position: absolute;
+    }
+    
+    .card1 {
+        position: absolute;
+        left: 300px;
+    }
+    
+    .card2 {
+        position: absolute;
+        left: 600px;
+    }
+    
+    .card3 {
+        position: absolute;
+        left: 900px;
+    }
+    
+    .card4 {
+        position: absolute;
+        top: 440px;    
+    }
+    
+    .card5 {
+        position: absolute;
+        top: 440px;
+        left: 300px;
+    }
+    
+    .card6 {
+        position: absolute;
+        top: 440px;
+        left: 600px;
+    }
+    
+    .card7 {
+        position: absolute;
+        top: 440px;
+        left: 900px;
+    
+    }
 }
 
-.card4 {
-    position: absolute;
-    left: 300px;
-    top: 260px;
-}
-
-.card5 {
-    position: absolute;
-    top: 520px;
-
-}
-
-.card6 {
-    position: absolute;
-    left: 300px;
-    top: 520px;
-}
-
-.card7 {
-    position: absolute;
-    top: 780px;
-}
-
-.card8 {
-    position: absolute;
-    left: 300px;
-    top: 780px;
-}
+    

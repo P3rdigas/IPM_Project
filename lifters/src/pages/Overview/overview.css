@@ -1,0 +1,41 @@
+.overview-injuries {
+    position: fixed;
+    top: 60%;
+    left: 65%;
+    width: 50%;
+    height: 50%;
+}
+
+@media screen and (max-width:1030px) {
+    
+    .overview-injuries {
+        position: fixed;
+        top: 60%;
+        left:660px;
+        width: 50%;
+        height: 50%;
+    }
+
+    @media screen and (max-height:650px) {
+        .overview-injuries {
+            top: 390px;
+        }
+    }    
+}
+
+@media screen and (max-height:650px) {
+    
+    .overview-injuries {
+        position: fixed;
+        top: 390px;
+        left:65%;
+        width: 50%;
+        height: 50%;
+    }
+
+    @media screen and (max-width:1030px) {
+        .overview-injuries {
+            left:660px;
+        }
+    }
+}
