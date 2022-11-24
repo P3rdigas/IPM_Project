@@ -8,12 +8,17 @@ import './overview.css'
 
 function Overview() {
     return(
-        <div id='overview'>
-            <SavedWorkouts />
+        <div className='overview' id='overview'>
             <Navbar />
-            <div className='overview-injuries'> 
-                <InjuriesOverview />
-            </div>                   
+            <div className='overview-elements'>
+                <div className='overview-left-column'>
+                    <SavedWorkouts />
+                </div>
+
+                <div className='overview-right-column'>
+                    <InjuriesOverview />
+                </div>
+            </div>                 
         </div>
     )
 }

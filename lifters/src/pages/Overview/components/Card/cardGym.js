@@ -2,11 +2,9 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { GrCircleInformation } from "react-icons/gr";
 import { FiTrash2 } from "react-icons/fi";
-import discardCard from '../SavedWorkouts/savedWorkouts.js';
 
 import './cardGym.css'
 
@@ -25,7 +23,8 @@ function CardGym({index, title, body, body2, body3, handleDelete}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <GrCircleInformation className='workout-card-info' onClick={handleDelete(index)}/>        
+        <FiTrash2 className='workout-card-trashcan' onClick={() => handleDelete(index)}/>
+        <GrCircleInformation className='workout-card-info'/>        
       </CardActions>
     </Card>
     </div>

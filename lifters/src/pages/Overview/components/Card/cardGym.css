@@ -1,5 +1,7 @@
 
 .cardf {
+    width: 250px;
+    height: 230px;
     transform: scale(1);
     transition: 0.5s;
 }
@@ -11,17 +13,20 @@
 
 }
 
-.workout-card-discard2 {
-    position: relative;
-    width: 12%;
-    height: 12%;
+.workout-card-trashcan {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    width: 15%;
+    height: 15%;
+    cursor: pointer;
 }
 
 .workout-card-info {
-    position: relative;
-    top: 20px;
-    left:200px;
-    width: 12%;
-    height: 12%;
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    width: 15%;
+    height: 15%;
     cursor: pointer;
 }
