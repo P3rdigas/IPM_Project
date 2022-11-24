@@ -4,7 +4,16 @@ import { BiCurrentLocation } from 'react-icons/bi'
 
 import Navbar from '../../components/Navbar/navbar'
 
+import Map from '../../images/map.png'
+
 import './findGyms.css'
+
+function handleClick() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+    })
+}
 
 function FindGyms() {
     return(
@@ -20,7 +29,7 @@ function FindGyms() {
                         <input type="text" className="findgyms-input-city-input" placeholder='Insert your city' />
                     </div>
 
-                    <button className='findgyms-input-location-button'>
+                    <button className='findgyms-input-location-button' onClick={handleClick}>
                         <BiCurrentLocation className='findgyms-input-location-icon'/>
                         <span>Search in your location</span>
                     </button>
@@ -28,7 +37,7 @@ function FindGyms() {
             </div>
 
             <div className='findgyms-map'>
-                <img src='../images/map.png' alt='map' />
+                <img className='findgyms-map-image' src={Map} alt='map' />
             </div>
         </div>
     )
