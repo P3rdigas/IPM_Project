@@ -65,6 +65,7 @@
     justify-content: center;
     align-items: center;
     width: 90%;
+    position: relative;
 }
 
 .register-form-field {
@@ -107,10 +108,11 @@
 }
 
 .profile-photo-circle{
-    width: 100px;
-    height: 100px;
+    width: 30%;
+    height: 30%;
     color: rgb(170, 170, 170);
     margin: auto;
+    float: right;
 }
 
 .gender-title-register {
