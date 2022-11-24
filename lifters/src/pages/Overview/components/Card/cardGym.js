@@ -10,7 +10,7 @@ import discardCard from '../SavedWorkouts/savedWorkouts.js';
 
 import './cardGym.css'
 
-function CardGym({title, body, body2, body3, handle}) {
+function CardGym({index, title, body, body2, body3, handleDelete}) {
   return (
     <div className='cardf'>
     <Card sx={{ minWidth: 250, maxWidth:250, minHeight: 230, maxHeight:230  }}>
@@ -19,13 +19,13 @@ function CardGym({title, body, body2, body3, handle}) {
           {title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <h2>{body}</h2>
-          <h2>{body2}</h2>
-          <h2>{body3}</h2>
+          {body}<br/>
+          {body2}<br/>
+          {body3}
         </Typography>
       </CardContent>
       <CardActions>
-        <GrCircleInformation className='workout-card-info' onClick={handle}/>        
+        <GrCircleInformation className='workout-card-info' onClick={handleDelete(index)}/>        
       </CardActions>
     </Card>
     </div>

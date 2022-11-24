@@ -4,13 +4,6 @@
     left: 2%;
 
 }
-.carddd {
-    transition: 0.3s;
-    animation: ease-in-out
-}
-.carddd:houver {
-    transform: scale(1.1);
-}
 
 .saved-wo-title {
     width: 600px;
