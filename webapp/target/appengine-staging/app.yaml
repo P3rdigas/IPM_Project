@@ -5,6 +5,8 @@ derived_file_type:
 - java_precompiled
 threadsafe: True
 auto_id_policy: default
+beta_settings:
+  'source_reference': 'https://github.com/P3rdigas/IPM_Project.git#8e4753187d8eeb02731ffcdf7aa3563e93d83fe8'
 api_version: 'user_defined'
 handlers:
 - url: (/.*/)
