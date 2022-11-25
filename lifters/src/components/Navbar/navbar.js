@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <Link to="/overview" className='navbar-logo'>
-          <img src={Logo} alt="Logo" width={64} height={71}/>  {/* Width = 0.9 * Height */}
+          <img src={Logo} alt="Logo" width={60} height={60}/>  {/* Width = 0.9 * Height */}
           Lifters Journal
       </Link>   
 
