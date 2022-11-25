@@ -11,66 +11,68 @@
 }
 
 .overview-left-column {
-    width: 50%;
-    height: 100%;
+    width: 1200px;
+    height: 1000px;
     padding: 25px 25px;
     text-align:center;
 }
 
-.overview-right-column {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    left: 50%;
-    padding: 0px 25px;
-}
-
-
-
-
-
-
-
-
-
-/*.overview-injuries {
+/*.overview-right-column {
     position: fixed;
     top: 60%;
-    left: 65%;
+    left: 60%;
+    width: 50%;
+    height: 50%;
+    
+}*/
+
+
+
+
+
+
+
+
+
+.overview-right-column {
+    position: fixed;
+    top: 60%;
+    left: 60%;
     width: 50%;
     height: 50%;
 }
 
 @media screen and (max-width:1030px) {
     
-    .overview-injuries {
+    .overview-right-column {
         position: fixed;
         top: 60%;
-        left:660px;
+        left:605px;
         width: 50%;
         height: 50%;
     }
 
     @media screen and (max-height:650px) {
-        .overview-injuries {
+        .overview-right-column {
             top: 390px;
+            left:605px;
         }
     }    
 }
 
 @media screen and (max-height:650px) {
     
-    .overview-injuries {
+    .overview-right-column {
         position: fixed;
         top: 390px;
-        left:65%;
+        left:60%;
         width: 50%;
         height: 50%;
     }
 
     @media screen and (max-width:1030px) {
-        .overview-injuries {
-            left:660px;
+        .overview-right-column {
+            left:605px;
         }
     }
-}*/
+}

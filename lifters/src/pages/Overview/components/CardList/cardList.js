@@ -1,13 +1,50 @@
 import { Container, Grid } from '@mui/material';
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import CardGym from '../Card/cardGym';
+import {createTheme} from '@material-ui/core/styles'
+import {ThemeProvider} from '@mui/material'
+
+let sp = 0;
+const theme = createTheme({
+  breakpoints: {
+    keys: ["xs", "sm", "md", "lg", "xl", "xxl"],
+    values: {sm: 0, md: 1160, lg: 1580, xl: 1900}
+  }
+});
 
 function CardList({items, handleDelete}) {
-  return (
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  if(windowSize > 1160 && windowSize < 1580) {
+    sp=-65;
+  }
+  if(windowSize > 1580 && windowSize < 1900) {
+    sp=-30;
+  }
+  if(windowSize > 1900) {
+    sp=0;
+  }
+
+
+  return (  
     <Container>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <ThemeProvider theme={theme}>
+        <Grid container rowSpacing={4} spacing={sp}>
             {items.map((card, i) => (
-                <Grid item key={card.id} md={12} lg={6}>
+                <Grid item key={card.id} sm={12} md={6} lg={4} xl={3}>
                    <CardGym
                        index={i}
                        key={card.id}
@@ -20,7 +57,8 @@ function CardList({items, handleDelete}) {
                 </Grid>
             ))}
         </Grid>
-    </Container>
+        </ThemeProvider>
+    </Container>    
   );
 }
 

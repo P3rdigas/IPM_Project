@@ -4,41 +4,28 @@ import bicep from '../../../../images/bicep.png'
 import mao from '../../../../images/mao.png'
 import pe from '../../../../images/pe.png'
 import pernas from '../../../../images/pernas.png'
+import InjuriesList from '../InjuriesList/injuriesList'
 
 import './injuriesOverview.css'
 
-let injuryList = [];
-
-injuryList.push(bicep)
-injuryList.push(mao)
-injuryList.push(pe)
-injuryList.push(pernas)
-
-function showInjuryN(nInjury) {
-  return(
-      <img src={injuryList[nInjury]} className={''.concat('injury', nInjury+1)} alt={''.concat('injury-alt', nInjury+1)} width={100} height={100}/>
-  )   
-}
-
-function listCards() {
-  return (
-      <div className='injury-images'>
-        {showInjuryN(0)}
-        {showInjuryN(1)}
-        {showInjuryN(2)}
-        {showInjuryN(3)}
-      </div>
-  )       
-  
-}
+let INITIAL_INJURIES = [
+  { id: "1", src: bicep},
+  { id: "2", src: mao},
+  { id: "3", src: pe},
+  { id: "4", src: pernas},
+  { id: "5", src: bicep},
+];
 
 function InjuriesOverview() {
+
   return (
     <div>
       <Typography gutterBottom variant="h5" component="div">
             My Injuries
       </Typography>
-      {listCards()}
+      <InjuriesList items={INITIAL_INJURIES}>
+
+      </InjuriesList>
     </div>
   );
 }

@@ -20,6 +20,13 @@
     width: 15%;
     height: 15%;
     cursor: pointer;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.workout-card-trashcan:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .workout-card-info {
@@ -29,4 +36,11 @@
     width: 15%;
     height: 15%;
     cursor: pointer;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.workout-card-info:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
