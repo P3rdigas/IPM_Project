@@ -15,7 +15,7 @@ const theme = createTheme({
 function InjuriesList({items}) {
 
 
-  return (  
+  return (   
     <Container>
         <ThemeProvider theme={theme}>
             <Grid container rowSpacing={0} spacing={-20}>
