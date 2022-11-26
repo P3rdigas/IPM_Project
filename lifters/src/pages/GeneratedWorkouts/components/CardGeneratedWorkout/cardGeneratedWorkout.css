@@ -22,9 +22,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: 5px 10px;
-    margin: 20px 0px;
+    margin: 25px 10px;
+}
+
+.exercises-conj-card-gw {
+    width: 96.5%;
+    height: 74%;
+    overflow:scroll;
+    overflow-x:hidden;
+    position: absolute;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    margin: 16px 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+
+::-webkit-scrollbar-track {
+    margin: 25px 0px;
 }
 
 .reps-card-gw {
@@ -33,6 +56,8 @@
     height: 45px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 90px;
     padding: 5px 10px;
     margin: 20px 10px;
 }
@@ -46,6 +71,7 @@
 .info-icon-gw {
     transition: 0.3s;
     transform: scale(1);
+    scale: 1.3;
     cursor: pointer;
 }
 
@@ -53,6 +79,8 @@
     transition: 0.3s;
     transform: scale(1.1);
 }
+
+/* CSS Buttons Reload And Save*/
 
 
 .save-card-gw {
@@ -97,9 +125,71 @@
     transform: scale(1.05);
 }
 
-
 .conj-save-reload-buttons{
     display: flex;
+    height: 12%;
     width: 100%;
     justify-content: space-evenly;
 }
+
+
+/* CSS - Generate Workout Before Generating Exercises*/
+
+.card-generated-workout-without-content {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 45%;
+    height: 80%;
+    background-color:#DBDBDB;
+    border-radius: 10px;
+    padding: 4%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.generate-button-gw{
+    transform: scale(1);
+    transition: 0.3s;
+    position: relative;
+    align-items: center;
+    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(97, 166, 171, 0.92);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.generate-button-gw:hover {
+    transform: scale(1.01);
+    transition: 0.3s;
+}
+
+.generate-button-gw span{
+    font-size: 60px
+}
+
+.gear-icon-gw {
+    width: 30%;
+    height: 30%;
+}
+
+.generate-button-gw:hover .gear-icon-gw{
+    animation: gear-spin-animation 8s infinite;
+}
+
+@keyframes gear-spin-animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(359deg);
+    }
+}
+
+

@@ -1,11 +1,9 @@
-import {React, useState} from 'react'
+import React from 'react'
 import Navbar from '../../components/Navbar/navbar'
 import SavedWorkouts from './components/SavedWorkouts/savedWorkouts'
 import InjuriesOverview from './components/InjuriesOverview/injuriesOverview'
-import Popup from './components/Popup/popup'
 
 import './overview.css'
-
 
 function Overview() {
 

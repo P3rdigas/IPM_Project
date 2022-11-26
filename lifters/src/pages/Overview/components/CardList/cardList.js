@@ -1,5 +1,5 @@
 import { Container, Grid } from '@mui/material';
-import {React, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import CardGym from '../Card/cardGym';
 import {createTheme} from '@mui/material/styles'
 import {ThemeProvider} from '@mui/material'

@@ -1,12 +1,9 @@
 import React from 'react'
 import './popup.css'
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import {GrCircleInformation} from "react-icons/gr";
 import {AiFillEdit} from 'react-icons/ai'
 import {BiXCircle} from "react-icons/bi";
 import { Link } from 'react-router-dom'
-
 
 function Popup(props) {
     return (props.trigger) ? (
