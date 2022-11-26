@@ -1,4 +1,4 @@
-.cardModel {
+.card-muscle-chosen-gw {
     transform: scale(1);
     transition: 0.5s;
     position: absolute;
@@ -11,19 +11,19 @@
     padding: 10px;
 }
 
-.muscle-card-remove {
+.muscle-card-remove-gw {
     color: #ff0000;
     transition: 0.3s;
     transform: scale(1);
     cursor: pointer;
 }
 
-.muscle-card-remove:hover {
+.muscle-card-remove-gw:hover {
     transition: 0.3s;
     transform: scale(1.1);
 }
 
-.muscle-card {
+.muscle-card-gw {
     border-radius: 10px;
     background-color: #ffffff;
     height: 25px;

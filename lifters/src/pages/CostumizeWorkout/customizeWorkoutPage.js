@@ -1,7 +1,8 @@
-import './generatedWorkoutsPage.css'
+
 import Navbar from "../../components/Navbar/navbar";
-import CardGeneratedWorkout from "./components/CardGeneratedWorkout/cardGenereatedWorkout";
-import HumanModel3DGW from "./components/3DModelGW/3dmodelGW";
+import HumanModel3DCW from "./components/3DModelCW/3dmodelCW";
+import CardWorkoutCW from "./components/CardWorkoutCW/cardWorkoutCW";
+import CardExercisesPerMuscleCW from "./components/CardExercisesPerMuscleCW/cardExercisesPerMuscleCW";
 
 const GENERATED_WORKOUT = [
     {name: 'Bicep Curl', reps: "12", sets:"3"},
@@ -18,14 +19,15 @@ const GENERATED_WORKOUT = [
     {name: 'Preacher Curl', reps: "15", sets:"4"},
 ];
 
-function GeneratedWorkoutsPage() {
+function CustomizeWorkoutPage() {
     return(
-        <div>
+        <div className="customize-workout-page-global">
             <Navbar/>
-            <HumanModel3DGW/>
-            <CardGeneratedWorkout exercises={GENERATED_WORKOUT}/>
+            <HumanModel3DCW/>
+            <CardExercisesPerMuscleCW exercises={GENERATED_WORKOUT}/>
+            <CardWorkoutCW exercises={GENERATED_WORKOUT}/>
         </div>
     )
 }
 
-export default GeneratedWorkoutsPage
+export default CustomizeWorkoutPage

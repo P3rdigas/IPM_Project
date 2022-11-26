@@ -1,30 +1,11 @@
-import {useGLTF,Stage, PresentationControls} from "@react-three/drei"
+import {Stage, PresentationControls, useGLTF} from "@react-three/drei"
 import React, { useState } from 'react'
 import { Canvas, } from '@react-three/fiber'
-import Typography from "@mui/material/Typography";
-import {BiXCircle} from "react-icons/bi";
-import "./cardModel3D.css"
-
+import CardMuscleChosenGW from "../CardMuscleChosenGW/cardMuscleChosenGW";
 
 function Model(props){
     const { scene } = useGLTF("/body.glb");
     return <primitive object={scene} {...props}/>
-}
-
-function CardGymModel3D(props) {
-    return (
-        <div className='cardModel'>
-            <Typography gutterBottom variant="h6" component="div">
-                Chosen:
-            </Typography>
-            {props.muscles.map((name,i) => (
-            <div className="muscle-card" key={i}>
-                <span>{name}</span>
-                    <BiXCircle size={20} className='muscle-card-remove' onClick={() => props.handleDelete(name)}/>
-            </div>
-            ))}
-        </div>
-    );
 }
 
 function Muscle(props){
@@ -50,7 +31,7 @@ function Muscle(props){
     )
 }
 
-function HumanModel3D(){
+function HumanModel3DGW(){
     const [muscles, setMuscles] = useState([])
     const handleSetMuscle = (name) => {
         if(muscles.filter((item) => item === name).length > 0) {
@@ -81,11 +62,9 @@ function HumanModel3D(){
                     <Muscle name="Shoulders"  position={[-0.0075, 0.016, -0.001]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
                 </PresentationControls>
             </Canvas>
-            <CardGymModel3D handleDelete={handleDelete} muscles={muscles}/>
+            <CardMuscleChosenGW handleDelete={handleDelete} muscles={muscles}/>
         </div>
     )
 }
 
-
-
-export default HumanModel3D
+export default HumanModel3DGW

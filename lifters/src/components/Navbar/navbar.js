@@ -34,7 +34,7 @@ function Navbar() {
           <Link to="/generate_workout" className='navbar-menu-item-link'>Generate Workout</Link>
         </li>
         <li className='navbar-menu-item'>
-          <Link to="/costumize_workout" className='navbar-menu-item-link'>Costumize Workout</Link>
+          <Link to="/customize_workout" className='navbar-menu-item-link'>Costumize Workout</Link>
         </li>
       </ul>
    </nav>
