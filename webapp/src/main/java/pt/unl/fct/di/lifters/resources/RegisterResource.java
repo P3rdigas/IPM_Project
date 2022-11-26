@@ -34,8 +34,6 @@ public class RegisterResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response doRegister(RegisterData data, @Context HttpServletRequest request) {
 
-        //return Response.ok("Utilizador " + data.getUsername() + " registado com sucesso.").build();
-
 		Transaction txn = datastore.newTransaction();
 
 		try {
