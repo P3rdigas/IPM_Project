@@ -12,17 +12,15 @@ import javax.ws.rs.core.Response.Status;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.StringValue;
 import com.google.cloud.datastore.Transaction;
 
 import pt.unl.fct.di.lifters.utils.RegisterData;
 
-@Path("/rest/register")
+@Path("/register")
 @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 public class RegisterResource {
 
@@ -36,9 +34,9 @@ public class RegisterResource {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response doRegister(RegisterData data, @Context HttpServletRequest request) {
 
-        return Response.ok("Utilizador " + data.getUsername() + " registado com sucesso.").build();
+        //return Response.ok("Utilizador " + data.getUsername() + " registado com sucesso.").build();
 
-		/*Transaction txn = datastore.newTransaction();
+		Transaction txn = datastore.newTransaction();
 
 		try {
 
@@ -55,16 +53,15 @@ public class RegisterResource {
 
 			String hashedPw = DigestUtils.sha512Hex(data.getPassword());
 
-			Entity user = Entity.newBuilder(userKey).set("user_pwd", hashedPw).set("user_email", data.getEmail())
-					.set("user_name", data.getName()).set("user_register_date", Timestamp.now())
-					.set("user_register_ip", request.getRemoteAddr()).set("user_privacy", data.getProfilePrivacy())
-					.set("user_phone", data.getPhoneNr()).set("user_mobile", data.getMobileNr())
-					.set("user_addr", StringValue.newBuilder(data.getMainAddr()).setExcludeFromIndexes(true).build())
-					.set("user_city", StringValue.newBuilder(data.getCity()).setExcludeFromIndexes(true).build())
-					.set("user_cp", StringValue.newBuilder(data.getCP()).setExcludeFromIndexes(true).build())
-					.set("user_nif", StringValue.newBuilder(data.getNIF()).setExcludeFromIndexes(true).build())
-					.set("user_acc_state", false).set("user_role", "USER")
-					.set("user_file", data.getFile()).build();
+			Entity user = Entity.newBuilder(userKey).set("user_pwd", hashedPw)
+													.set("user_name", data.getName())
+													.set("user_email", data.getEmail())
+													.set("user_gender", data.getGender())
+													.set("user_age", data.getAge())
+													.set("user_height", data.getHeight())
+													.set("user_weight", data.getWeight())
+													.set("user_fileURL", data.getFileURL())
+													.build();
 
 			txn.put(user);
 			txn.commit();
@@ -74,6 +71,6 @@ public class RegisterResource {
 
 			if (txn.isActive())
 				txn.rollback();
-		}*/
+		}
 	}
 }
