@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Paper,RadioGroup, FormControlLabel, Radio } from '@mui/material/';
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -12,9 +12,15 @@ import {Typography} from "@mui/material";
 import './register.css'
 
 function RegisterPage() {
-    const [click, setClick] = useState(false);
+    const [passwordIcon, setPasswordIcon] = useState(false);
+    const [checkPwdIcon, setCheckPwdIcon] = useState(false);
+    const [isPending, setIsPending] = useState(false);
     const [gender, setGender] = useState("male");
-    const handleClick = () => setClick(!click);
+    const navigate = useNavigate();
+
+    const handlePassword = () => setPasswordIcon(!passwordIcon);
+
+    const handlecheckPwd = () => setCheckPwdIcon(!checkPwdIcon);
 
     const handleGender = e => {
         setGender(e.currentTarget.value)
@@ -22,6 +28,8 @@ function RegisterPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        setIsPending(true)
 
         const user = {
             username: document.getElementById("username").value,
@@ -39,8 +47,12 @@ function RegisterPage() {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)
-        }).then((response) => {
-            console.log(response)
+        }).then(response => {
+            setIsPending(false)
+            if(response.status === 200)
+                navigate('/overview');
+            else
+                console.log(response.body)
         })
     }
 
@@ -60,16 +72,16 @@ function RegisterPage() {
                                 </div>
                                 <div className='register-form-field'>
                                     <RiLockPasswordFill className='register-form-icon'/>
-                                    <input type={click ? "text" : "password"} id='password' className="register-form-input" placeholder='Password' required />
-                                    <div className='register-form-password-icon' onClick={handleClick}>
-                                        {click ? <AiFillEye /> : <AiFillEyeInvisible />}
+                                    <input type={passwordIcon ? "text" : "password"} id='password' className="register-form-input" placeholder='Password' required />
+                                    <div className='register-form-password-icon' onClick={handlePassword}>
+                                        {passwordIcon ? <AiFillEye /> : <AiFillEyeInvisible />}
                                     </div>
                                 </div>
                                 <div className='register-form-field'>
                                     <RiLockPasswordFill className='register-form-icon'/>
-                                    <input type={click ? "text" : "password"} id='confirmPWD' className="register-form-input" placeholder='Confirm Password' required />
-                                    <div className='register-form-password-icon' onClick={handleClick}>
-                                        {click ? <AiFillEye /> : <AiFillEyeInvisible />}
+                                    <input type={checkPwdIcon ? "text" : "password"} id='confirmPWD' className="register-form-input" placeholder='Confirm Password' required />
+                                    <div className='register-form-password-icon' onClick={handlecheckPwd}>
+                                        {checkPwdIcon ? <AiFillEye /> : <AiFillEyeInvisible />}
                                     </div>
                                 </div>
                                 <div className='register-form-field'>
@@ -108,8 +120,8 @@ function RegisterPage() {
                                 </div>
                             </div>
                         </div>
-                        <button type='submit' className='register-form-button'>
-                            <span className="register-form-button-text">Submit</span>
+                        <button type='submit'disabled={isPending} className='register-form-button'>
+                            <span className="register-form-button-text">{isPending ? "Submiting..." : "Submit"}</span>
                             <FiLogIn className='register-form-button-icon'/>
                         </button>
                     </form>
