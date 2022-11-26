@@ -1,0 +1,36 @@
+.cardModel {
+    transform: scale(1);
+    transition: 0.5s;
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    width: 190px;
+    height: 265px;
+    background-color:#DBDBDB;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.muscle-card-remove {
+    color: #ff0000;
+    transition: 0.3s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.muscle-card-remove:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.muscle-card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 0px;
+}

@@ -7,6 +7,7 @@ import OverviewPage from "./pages/Overview/overview";
 import FindGyms from "./pages/FindGyms/findGyms";
 
 import './App.css'
+import GeneratedWorkoutsPage from "./pages/GeneratedWorkouts/generatedWorkoutsPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/signup" element={<RegisterPage />} />
         <Route exact path="/overview" element={<OverviewPage />} />
         <Route exact path="/find_gyms" element={<FindGyms />} />
+        <Route exact path="/generate_workout" element={<GeneratedWorkoutsPage />} />
       </Routes>
     </>
   );

@@ -1,0 +1,105 @@
+.cardGeneratedWorkout {
+    transform: scale(1);
+    transition: 0.5s;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 45%;
+    height: 80%;
+    background-color:#DBDBDB;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.exercise-card-gw {
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 20px 0px;
+}
+
+.reps-card-gw {
+    border-radius: 10px;
+    background-color: #DBDBDB;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 20px 10px;
+}
+
+.conj-reps-set-card-gw {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.info-icon-gw {
+    transition: 0.3s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.info-icon-gw:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+
+.save-card-gw {
+    transition: 0.3s;
+    transform: scale(1);
+    border-radius: 10px;
+    background-color: #258c17;
+    width: 45%;
+    height: 45px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.reload-card-gw {
+    transition: 0.3s;
+    transform: scale(1);
+    display: flex;
+    background-color: #bb3e3e;
+    align-content: center;
+    column-gap: 10px;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    height: 45px;
+    width: 45%;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.reload-card-gw:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.save-card-gw:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+
+.conj-save-reload-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
