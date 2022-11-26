@@ -9,6 +9,7 @@ import InjuriesPage from "./pages/InjuriesPage/injuriesPage"
 
 import './App.css'
 import GeneratedWorkoutsPage from "./pages/GeneratedWorkouts/generatedWorkoutsPage";
+import CustomizeWorkoutPage from "./pages/CostumizeWorkout/customizeWorkoutPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/find_gyms" element={<FindGyms />} />
         <Route exact path="/generate_workout" element={<GeneratedWorkoutsPage />} />
         <Route exact path="/injuries" element={<InjuriesPage />} />
+        <Route exact path="/customize_workout" element={<CustomizeWorkoutPage />} />
       </Routes>
     </>
   );
