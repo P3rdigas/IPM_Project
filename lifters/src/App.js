@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage/loginPage";
 import RegisterPage from "./pages/Register/register";
 import OverviewPage from "./pages/Overview/overview";
 import FindGyms from "./pages/FindGyms/findGyms";
+import InjuriesPage from "./pages/InjuriesPage/injuriesPage"
 
 import './App.css'
 import GeneratedWorkoutsPage from "./pages/GeneratedWorkouts/generatedWorkoutsPage";
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/overview" element={<OverviewPage />} />
         <Route exact path="/find_gyms" element={<FindGyms />} />
         <Route exact path="/generate_workout" element={<GeneratedWorkoutsPage />} />
+        <Route exact path="/injuries" element={<InjuriesPage />} />
       </Routes>
     </>
   );

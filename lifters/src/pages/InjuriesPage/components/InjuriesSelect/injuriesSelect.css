@@ -1,0 +1,191 @@
+.injuries-s-main {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 45%;
+    height: 80%;
+    background-color:#DBDBDB;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.injuries-s-box1 {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 12%;
+    background-color:white;
+    border-radius: 10px;
+    
+}
+
+.injuries-s-box1-card {
+    width: 96%;
+    height: 76%;
+    background-color:#DBDBDB;
+    border-radius: 10px;
+    position: relative;
+    top:12%;
+    left:2%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.funccc {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.injuries-s-dropdown {
+    width: 110%;
+    height: 90%;
+    margin:20px;
+}
+
+.dropdown {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    user-select: none;
+}
+
+.dropdown .dropdown-btn {
+    position: relative;
+    padding:10px;
+    height: 90%;
+    top:5%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
+}
+
+.dropdown .dropdown-content {
+    position: absolute;
+    top:110%;
+    left:3%;
+    width: 94%;
+    padding: 15px;
+    background-color: #fff;
+    z-index: 500;
+    box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.1);
+}
+
+.dropdown .dropdown-content .dropdown-item {
+    padding:7px;
+    cursor:pointer;
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+    padding:10px;
+    cursor:pointer;
+    background-color: #f4f4f4;
+}
+
+.injuries-s-injury-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:5%;
+}
+
+.injuries-dropdown3 {
+    width: 33%;
+    position: absolute;
+}
+
+.injuries-s-injury-time-n {
+    width: 10%;
+    height: 60%;
+    position: relative;
+    left:70%;
+    
+}
+
+.injuries-s-button {
+    transition: 0.3s;
+    transform: scale(1);
+    border-radius: 10px;
+    background-color: #258c17;
+    position: absolute;
+    top:30%;
+    left:5%;
+    width: 88%;
+    height: 7%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.injuries-s-button:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.injuries-s-box2 {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    background-color:white;
+    border-radius: 10px;
+}
+
+.injuries-s-box2-injury-card {
+    background-color: #DBDBDB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+    width:96%;
+    height: 20%;
+    border-radius: 10px;
+    position: relative;
+    left:2%;
+    padding: 10px 10px;
+}
+
+.injury-card-conj {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.injury-card-info {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 20px 10px;
+    right: 0px;
+    width:110px;
+    flex-direction: column;
+}
+
+.injuries-s-box2-title {
+    margin: 20px;
+}
+
+.injury-card-info-popup-close {
+    transform: scale(1);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.injury-card-info-popup-close:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
