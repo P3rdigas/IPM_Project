@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './generatedWorkoutsPage.css'
 import HumanModel3D from "../../components/3D Model/3dmodel";
 import Navbar from "../../components/Navbar/navbar";
