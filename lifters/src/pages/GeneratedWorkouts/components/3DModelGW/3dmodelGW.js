@@ -31,23 +31,7 @@ function Muscle(props){
     )
 }
 
-function HumanModel3DGW(){
-    const [muscles, setMuscles] = useState([])
-    
-    const handleSetMuscle = (name) => {
-        if(muscles.filter((item) => item === name).length > 0) {
-            setMuscles(muscles.filter((item) => item !== name));
-        }
-        else {
-            const newMuscles = [name,...muscles]
-            setMuscles(newMuscles)
-        };
-    };
-
-    const handleDelete = (name) => {
-        setMuscles(muscles.filter((item) => item !== name));
-    }
-
+function HumanModel3DGW(props){
     return (
         <div>
             <Canvas dpr={[1,2]} shadows={true} camera={{fov:45}} style={{"position":"absolute" ,"width":"40%", "height":"90%"}}>
@@ -56,16 +40,16 @@ function HumanModel3DGW(){
                     <Stage environment={null}>
                         <Model scale={0.50}/>
                     </Stage>
-                    <Muscle name="Bicep" position={[0.008, 0.01, 0.00055]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Chest" position={[0.0025, 0.015, 0.0025]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Triceps" position={[0.0075, 0.012, -0.003]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Leg"  position={[0.004,  -0.005, 0.0024]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Back"  position={[-0.002, 0.0135, -0.004]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Abs"  position={[0, 0.008, 0.0035]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                    <Muscle name="Shoulders"  position={[-0.0075, 0.016, -0.001]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
+                    <Muscle name="Bicep" position={[0.008, 0.01, 0.00055]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Chest" position={[0.0025, 0.015, 0.0025]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Triceps" position={[0.0075, 0.012, -0.003]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Leg"  position={[0.004,  -0.005, 0.0024]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Back"  position={[-0.002, 0.0135, -0.004]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Abs"  position={[0, 0.008, 0.0035]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
+                    <Muscle name="Shoulders"  position={[-0.0075, 0.016, -0.001]} handleSetMuscle={props.handleSetMuscle} handleDelete={props.handleDelete} muscles={props.muscles}/>
                 </PresentationControls>
             </Canvas>
-            <CardMuscleChosenGW handleDelete={handleDelete} muscles={muscles}/>
+            <CardMuscleChosenGW handleDelete={props.handleDelete} muscles={props.muscles}/>
         </div>
     )
 }
