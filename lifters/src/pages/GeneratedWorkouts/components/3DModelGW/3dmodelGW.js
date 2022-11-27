@@ -33,6 +33,7 @@ function Muscle(props){
 
 function HumanModel3DGW(){
     const [muscles, setMuscles] = useState([])
+    
     const handleSetMuscle = (name) => {
         if(muscles.filter((item) => item === name).length > 0) {
             setMuscles(muscles.filter((item) => item !== name));
@@ -42,9 +43,11 @@ function HumanModel3DGW(){
             setMuscles(newMuscles)
         };
     };
+
     const handleDelete = (name) => {
         setMuscles(muscles.filter((item) => item !== name));
     }
+
     return (
         <div>
             <Canvas dpr={[1,2]} shadows={true} camera={{fov:45}} style={{"position":"absolute" ,"width":"40%", "height":"90%"}}>

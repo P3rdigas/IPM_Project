@@ -4,7 +4,7 @@ import CardGeneratedWorkout from "./components/CardGeneratedWorkout/cardGenereat
 import HumanModel3DGW from "./components/3DModelGW/3dmodelGW";
 
 const GENERATED_WORKOUT = [
-    {name: 'Bicep Curl', reps: "12", sets:"3"},
+    /* {name: 'Bicep Curl', reps: "12", sets:"3"},
     {name: 'Rows', reps: "8", sets:"3"},
     {name: 'Pull up', reps: "15", sets:"4"},
     {name: 'Preacher Curl', reps: "15", sets:"4"},
@@ -15,7 +15,7 @@ const GENERATED_WORKOUT = [
     {name: 'Bicep Curl', reps: "12", sets:"3"},
     {name: 'Rows', reps: "8", sets:"3"},
     {name: 'Pull up', reps: "15", sets:"4"},
-    {name: 'Preacher Curl', reps: "15", sets:"4"},
+    {name: 'Preacher Curl', reps: "15", sets:"4"},*/
 ];
 
 function GeneratedWorkoutsPage() {

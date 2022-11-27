@@ -61,5 +61,4 @@ public class LoginResource {
                 txn.rollback();
         }
     }
-
 }

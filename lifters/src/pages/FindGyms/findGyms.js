@@ -33,30 +33,30 @@ function FindGyms() {
           radius: '5000',
           type: ['gym']
         };
-
+        
         let newGyms = []
-      
+
         const service = new window.google.maps.places.PlacesService(map);
         service.nearbySearch(request, function(results, status, pagination) {
             if (status === window.google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
-                    newGyms.push(results[i]);
+                    newGyms.push(results[i])
                 }
             }
 
             if (pagination && pagination.hasNextPage) {
                 pagination.nextPage();
             }
-
+            
             if(newGyms.length === 0) {
                 alert("No gyms found in a 5km radius")
             } else {
-                setGyms(newGyms)
                 setZoom(14)
                 setCenter(centerSearch)
+                setGyms(newGyms)
             }
-          });
-      }
+        });
+    }
       
     const handleClick = () => {
         navigator.geolocation.getCurrentPosition(function(position) {
