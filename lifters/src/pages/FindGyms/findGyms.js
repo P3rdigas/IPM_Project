@@ -28,9 +28,6 @@ function FindGyms() {
     const handleSearch = (lat, lng) => {
         const centerSearch = { lat: lat, lng: lng }
 
-        setZoom(14)
-        setCenter(centerSearch)
-      
         var request = {
           location: centerSearch,
           radius: '5000',
@@ -50,11 +47,15 @@ function FindGyms() {
             if (pagination && pagination.hasNextPage) {
                 pagination.nextPage();
             }
-            
-            setGyms(newGyms)
-          });
 
-          
+            if(newGyms.length === 0) {
+                alert("No gyms found in a 5km radius")
+            } else {
+                setGyms(newGyms)
+                setZoom(14)
+                setCenter(centerSearch)
+            }
+          });
       }
       
     const handleClick = () => {
