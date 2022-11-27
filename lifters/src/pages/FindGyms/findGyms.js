@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FaCity } from 'react-icons/fa'
 import { BiCurrentLocation } from 'react-icons/bi'
 
 import Navbar from '../../components/Navbar/navbar'
 
-import { GoogleMap } from '@react-google-maps/api'
+import { GoogleMap, Marker } from '@react-google-maps/api'
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import "@reach/combobox/styles.css";
@@ -14,12 +14,49 @@ import './findGyms.css'
 function FindGyms() {
     const [zoom, setZoom] = useState(7)
     const [center, setCenter] = useState({ lat: 39.3325, lng: -7.5113 })
+    const [gyms, setGyms] = useState([])
+
+    const ref = useRef();
+    const [map, setMap] = useState(null);
+
+    useEffect(() => {
+      if (ref.current && !map) {
+        setMap(new window.google.maps.Map(ref.current, {}));
+      }
+    }, [ref, map]);
 
     const handleSearch = (lat, lng) => {
-        setZoom(14)
-        setCenter({ lat: lat, lng: lng })
-    }
+        const centerSearch = { lat: lat, lng: lng }
 
+        setZoom(14)
+        setCenter(centerSearch)
+      
+        var request = {
+          location: centerSearch,
+          radius: '5000',
+          type: ['gym']
+        };
+
+        let newGyms = []
+      
+        const service = new window.google.maps.places.PlacesService(map);
+        service.nearbySearch(request, function(results, status, pagination) {
+            if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    newGyms.push(results[i]);
+                }
+            }
+
+            if (pagination && pagination.hasNextPage) {
+                pagination.nextPage();
+            }
+            
+            setGyms(newGyms)
+          });
+
+          
+      }
+      
     const handleClick = () => {
         navigator.geolocation.getCurrentPosition(function(position) {
             handleSearch(position.coords.latitude, position.coords.longitude)
@@ -46,12 +83,18 @@ function FindGyms() {
                 </div>
             </div>
 
-            <div className='findgyms-map'>
+            <div  className='findgyms-map'>
                 <GoogleMap
                     zoom={zoom}
                     center={center}
                     mapContainerClassName='map-container'
+                    ref={ref}
                 >
+                    {gyms.map((marker, i) => (
+                        <Marker key={i} 
+                                position={{ lat: marker.geometry.location.lat(), lng: marker.geometry.location.lng()}}        
+                        />
+                    ))}
                 </GoogleMap>
             </div>
         </div>
