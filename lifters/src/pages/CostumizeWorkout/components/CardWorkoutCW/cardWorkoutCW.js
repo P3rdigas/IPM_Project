@@ -1,32 +1,35 @@
 import React, {useState} from "react";
 import "./cardWorkoutCW.css"
 import Typography from "@mui/material/Typography";
-import { GrCircleInformation } from "react-icons/gr";
 import { TfiSave } from "react-icons/tfi";
 import PopUPSave from "../../../GeneratedWorkouts/components/PopUPSaveGW/popUPSaveGW";
+import ExercisesCardRightCW from "./exerciseCardRightCW";
 
 function CardWorkoutCW(props) {
     const [buttonPopUp,setButtonPopup] = useState(false)
+    const [cards,setCards] = useState([])
+
+    const draggingOver=(e)=>{
+        e.preventDefault()
+    }
+    const dragDrop=(e)=>{
+        let exerciseName = e.dataTransfer.getData("exerciseName")
+        let card={name:exerciseName, reps:"10", sets:"3"}
+        setCards([card,...cards])
+    }
+    const handleDelete = (name) => {
+        setCards(cards.filter((item) => item.name !== name));
+    }
+
     return(
         <div className='card-workout-cw'>
             <div>
                 <Typography gutterBottom variant="h4" component="div">
                     Your Workout
                 </Typography>
-                <div className="exercises-conj-card-cw">
-                    {props.exercises.map((name, i) => (
-                        <div className="exercise-card-cw" key={i}>
-                            <span style={{fontSize: 24}}>{props.exercises[i].name}</span>
-                            <div className="conj-reps-set-card-cw">
-                                <div className="reps-card-cw">
-                                    <span style={{fontSize: 24}}>{props.exercises[i].reps} reps</span>
-                                </div>
-                                <div className="reps-card-cw">
-                                    <span style={{fontSize: 24}}>{props.exercises[i].sets} sets</span>
-                                </div>
-                                <GrCircleInformation className="info-icon-cw" onClick={console.log("yauu")}/>
-                            </div>
-                        </div>
+                <div onDragOver={(e)=> draggingOver(e)} onDrop={(e)=>dragDrop(e)} className="exercises-conj-card-cw">
+                    {cards.map((name, i) => (
+                        <ExercisesCardRightCW name={cards[i].name} reps={cards[i].reps} sets={cards[i].sets} key={i} handleDelete={handleDelete}/>
                     ))}
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
-import { GrCircleInformation } from "react-icons/gr";
 import "./cardExercisesPerMuscleCW.css"
 import React from "react";
+import ExercisesCardLeftCW from "./exerciseCardLeftCW";
 
 function CardExercisesPerMuscleCW(props) {
     return(
@@ -9,12 +9,9 @@ function CardExercisesPerMuscleCW(props) {
             <Typography gutterBottom variant="h4" component="div">
                 Exercises
             </Typography>
-            <div className="exercises-muscle-conj-card-cw">
-                {props.exercises.map((name, i) => (
-                    <div className="exercise-muscle-card-cw" key={i}>
-                        <span style={{fontSize: 24}}>{props.exercises[i].name}</span>
-                        <GrCircleInformation className="info-icon-muscle-cw" onClick={console.log("yauu")}/>
-                    </div>
+            <div className="exercises-muscle-conj-card-cw" >
+                {props.exercises.map((item, i) => (
+                    <ExercisesCardLeftCW name={props.exercises[i].name} exercise={props.exercises[i]} key={i}/>
                 ))}
             </div>
         </div>
