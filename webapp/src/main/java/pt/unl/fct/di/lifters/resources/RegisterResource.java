@@ -1,11 +1,9 @@
 package pt.unl.fct.di.lifters.resources;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -32,7 +30,7 @@ public class RegisterResource {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response doRegister(RegisterData data, @Context HttpServletRequest request) {
+	public Response doRegister(RegisterData data) {
 
 		Transaction txn = datastore.newTransaction();
 
@@ -45,7 +43,7 @@ public class RegisterResource {
 			if (entity != null) {
 
 				txn.rollback();
-				return Response.status(Status.CONFLICT).entity("Nome de utilizador já existe.").build();
+				return Response.status(Status.CONFLICT).entity("Username already exists.").build();
 
 			}
 
@@ -63,7 +61,7 @@ public class RegisterResource {
 
 			txn.put(user);
 			txn.commit();
-			return Response.ok("Utilizador " + data.getUsername() + " registado com sucesso.").build();
+			return Response.ok().build();
 
 		} finally {
 

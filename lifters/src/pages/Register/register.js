@@ -49,10 +49,15 @@ function RegisterPage() {
             body: JSON.stringify(user)
         }).then(response => {
             setIsPending(false)
-            if(response.status === 200)
+            if(response.ok) {
+                sessionStorage.setItem("username", document.getElementById("username").value)
                 navigate('/overview');
-            else
-                console.log(response.body)
+            } else {
+                return response.text().then(text => { 
+                    alert(text)
+                    throw new Error(text) 
+                })
+            }
         })
     }
 
@@ -120,7 +125,7 @@ function RegisterPage() {
                                 </div>
                             </div>
                         </div>
-                        <button type='submit'disabled={isPending} className='register-form-button'>
+                        <button type='submit' disabled={isPending} className='register-form-button'>
                             <span className="register-form-button-text">{isPending ? "Submiting..." : "Submit"}</span>
                             <FiLogIn className='register-form-button-icon'/>
                         </button>

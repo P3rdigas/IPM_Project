@@ -25,8 +25,6 @@ public class LoginResource {
 
     private final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
-    private final Gson g = new Gson();
-
     public LoginResource() {    }
 
     @POST
@@ -42,20 +40,17 @@ public class LoginResource {
             Entity user = txn.get(userKey);
             if (user == null) {
                 txn.rollback();
-                return Response.status(Status.NOT_FOUND).entity("Utilizador não esxite").build();
+                return Response.status(Status.NOT_FOUND).entity("Username doesn't exist").build();
             }
 
             String hashedPwd = user.getString("user_pwd");
 
             if (hashedPwd.equals(DigestUtils.sha512Hex(data.getPassword()))) {
-                return Response.ok(g.toJson(user)).build();
+                return Response.ok().build();
             } else {
                 txn.rollback();
-                return Response.status(Status.FORBIDDEN).entity("Password errada.").build();
+                return Response.status(Status.FORBIDDEN).entity("Wrong password.").build();
             }
-        } catch (Exception e) {
-            txn.rollback();
-            return Response.status(Status.INTERNAL_SERVER_ERROR).entity("exception e").build();
         } finally {
             if (txn.isActive())
                 txn.rollback();

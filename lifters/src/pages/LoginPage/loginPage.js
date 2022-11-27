@@ -35,10 +35,15 @@ function LoginPage() {
             body: JSON.stringify(user)
         }).then(response => {
             setIsPending(false)
-            if(response.status === 200)
+            if(response.ok) {
+                sessionStorage.setItem("username", document.getElementById("username").value)
                 navigate('/overview');
-            else
-                console.log(response.body)
+            } else {
+                return response.text().then(text => { 
+                    alert(text)
+                    throw new Error(text) 
+                })
+            }
         })
     }
 

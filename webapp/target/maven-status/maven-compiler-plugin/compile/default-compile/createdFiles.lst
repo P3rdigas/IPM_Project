@@ -1,5 +1,8 @@
+pt\unl\fct\di\lifters\utils\LoginData.class
+pt\unl\fct\di\lifters\resources\ExercisesResource.class
+pt\unl\fct\di\lifters\utils\WorkoutData.class
+pt\unl\fct\di\lifters\utils\ExerciseData.class
 pt\unl\fct\di\lifters\resources\LoginResource.class
 pt\unl\fct\di\lifters\resources\RegisterResource.class
-pt\unl\fct\di\lifters\utils\LoginData.class
+pt\unl\fct\di\lifters\resources\UsersResource.class
 pt\unl\fct\di\lifters\utils\RegisterData.class
-pt\unl\fct\di\lifters\resources\ExercisesResource.class

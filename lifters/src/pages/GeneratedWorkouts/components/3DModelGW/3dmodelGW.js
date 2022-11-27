@@ -11,6 +11,7 @@ function Model(props){
 function Muscle(props){
     const [hovered, setHover] = useState(false);
     const muscleInMuscles = props.muscles.filter((item) => item === props.name).length > 0
+    
     const handleClick = () => {
         if (muscleInMuscles)
             props.handleDelete(props.name)
