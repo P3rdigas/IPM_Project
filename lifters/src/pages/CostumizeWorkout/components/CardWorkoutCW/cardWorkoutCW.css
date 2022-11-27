@@ -51,6 +51,17 @@
     margin: 25px 10px;
 }
 
+.exercise-empty-for-drag-card-cw {
+    border-radius: 10px;
+    background-color: #dbdbdb;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 25px 10px;
+}
+
 .conj-reps-set-card-cw {
     display: flex;
     align-items: center;

@@ -15,12 +15,12 @@ let GENERATED_WORKOUT = [
 
 
 function CustomizeWorkoutPage() {
+    const [cards,setCards] = useState([])
     return(
         <div className="customize-workout-page-global">
             <Navbar/>
-            <HumanModel3DCW/>
-            <CardExercisesPerMuscleCW exercises={GENERATED_WORKOUT}/>
-            <CardWorkoutCW exercises={GENERATED_WORKOUT}/>
+            <HumanModel3DCW exercises={GENERATED_WORKOUT}/>
+            <CardWorkoutCW exercises={GENERATED_WORKOUT} cards={cards} setCards={setCards}/>
         </div>
     )
 }
