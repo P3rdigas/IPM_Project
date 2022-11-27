@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/navbar";
 import InjuriesSelect from './components/InjuriesSelect/injuriesSelect';
 import HumanModel3DInjuries from "./components/3DModelInjuries/3dmodelInjuries";
 
-const INJURED ='Armyauuuu';
+const INJURED ='Bicep';
 ;
 
 function InjuriesPage() {

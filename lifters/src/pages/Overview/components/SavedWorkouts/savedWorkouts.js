@@ -36,7 +36,7 @@ function SavedWorkouts() {
     return (
         <div className='saved-wo'>
             <div className='saved-wo-title'>
-                <h2>Your Saved Workouts</h2>
+                <h2>My Workouts</h2>
             </div>
 
             <div className='saved-wo-list'> 

@@ -1,8 +1,15 @@
-import {React, useState} from "react";
+import {React, useEffect, useRef, useState} from "react";
 import Typography from "@mui/material/Typography";
 import Dropdown from "../Dropdown/dropdown";
 import {BiXCircle} from "react-icons/bi";
+import { DateRangePicker } from 'react-date-range';
+import format from 'date-fns/format'
+import { addDays } from 'date-fns'
+
+import "react-datepicker/dist/react-datepicker.css";
 import './injuriesSelect.css'
+import 'react-date-range/dist/styles.css'; 
+import 'react-date-range/dist/theme/default.css';
 
 
 
@@ -17,21 +24,50 @@ function InjuriesSelect(props) {
     const [selected2, setSelected2] = useState("Mesure");
     const [selected3, setSelected3] = useState("Number");
     const [newArray, setNewArray] = useState(arr);
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(), 7),
+            key: 'selection'
+        }
+    ]);
+    const [open, setOpen] = useState(false)
 
     const handleChange = (name, s, n, m, fun) => {
         if(fun === 'add') {
-            setNewArray(newArray => [...newArray, {name: name, seriousness:s, number:n, mesure:m}])
+            setNewArray(newArray => [...newArray, {name: name, seriousness:s, startDate:n, endDate:m}])
         }
         else {
-            setNewArray(injury => injury.filter((item, i) => (item.name !== name || item.seriousness !== s || item.number !== n || item.mesure !== m)));
+            setNewArray(injury => injury.filter((item, i) => (item.name !== name || item.seriousness !== s || item.startDate !== n || item.endDate !== m)));
         }
         
     }
 
+    useEffect (() => {
+        document.addEventListener("keydown", hideOnEscape, true)
+        document.addEventListener("click", hideOnClick, true)
+    })
+
+    const hideOnEscape = (e) => {
+        if(e.key === "Escape") {
+            setOpen(false)
+            setSelected2(`Until ${format(range[0].endDate, "dd/MM/yyyy")}`)
+        }
+    }
+
+    const refOne = useRef(null)
+
+    const hideOnClick = (e) => {
+        if(refOne.current && !refOne.current.contains(e.target)) {
+            setOpen(false)
+            setSelected2(`Until ${format(range[0].endDate, "dd/MM/yyyy")}`)
+        }
+    }
+    
     return (
         <div className='injuries-s-main'>
             <Typography gutterBottom variant="h4" component="div">
-                Generated Workout
+                Injuries
             </Typography>
             <div className='injuries-s-box1'>
                 
@@ -40,13 +76,32 @@ function InjuriesSelect(props) {
                             <span style={{fontSize: 24}}>{props.parts}</span>
                         </div>
                         <div className='injuries-s-dropdown'>
-                        <Dropdown optionsR={dropOptions1} selected={selected} setSelected={setSelected} />
+                            <Dropdown optionsR={dropOptions1} selected={selected} setSelected={setSelected} />
                         </div>
-                        <div className='injuries-s-dropdown'>
-                                <Dropdown optionsR={dropOptions3}  selected={selected3} setSelected={setSelected3} />
-                        </div>
-                        <div className='injuries-s-dropdown'>
-                                <Dropdown optionsR={dropOptions2}  selected={selected2} setSelected={setSelected2} />    
+                        <div className='injuries-s-date'>
+                            <div>
+                                <span style={{fontSize: 14, color: 'grey'}}>Recovery Time</span>
+                                <input  value= {` ${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
+                                    readOnly
+                                    className='inputBox' 
+                                    onClick={(() => setOpen(open => !open))} 
+                                />
+                                    
+                            </div>
+                            <div className='calend' ref={refOne}> 
+                                {
+                                    open &&
+                                    <DateRangePicker                                        
+                                        onChange={item => setRange([item.selection])}
+                                        editableDateInputs={true}
+                                        moveRangeOnFirstSelection={false}
+                                        ranges={range}
+                                        months={1}
+                                        direction='horizontal'
+                                        className="calendarElement"
+                                    />
+                                }                                    
+                            </div>       
                         </div>
                     </div>
                 
@@ -62,14 +117,14 @@ function InjuriesSelect(props) {
                     <div className="injuries-s-box2-injury-card" key={i}>
                         <span style={{fontSize: 24}}>{newArray[i].name} Injury</span>
                         <div className="injury-card-conj">
-                            <div className="injury-card-info">
+                            <div className="injury-card-info1">
                                 <span className='injury-card-info-text' text-align= 'center' style={{fontSize: 20}}>{newArray[i].seriousness}</span>
                             </div>
-                            <div className="injury-card-info">
-                                <span className='injury-card-info-text' style={{fontSize: 20}}>{newArray[i].number} {newArray[i].mesure}</span>
+                            <div className="injury-card-info2">
+                                <span className='injury-card-info-text' style={{fontSize: 20}}>{newArray[i].endDate}</span>
                             </div>
 
-                            <BiXCircle className = 'injury-card-info-popup-close' size={35} onClick={() => handleChange(newArray[i].name,newArray[i].seriousness,newArray[i].number,newArray[i].mesure, 'delete')}></BiXCircle>
+                            <BiXCircle className = 'injury-card-info-popup-close' size={35} onClick={() => handleChange(newArray[i].name,newArray[i].seriousness,newArray[i].startDate,newArray[i].endDate, 'delete')}></BiXCircle>
                         </div>
                     </div>
                 ))}
