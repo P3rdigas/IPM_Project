@@ -4,12 +4,12 @@ import java.util.List;
 
 public class WorkoutData {
     private String title;
-    private List<ExerciseData> exercises;
-    private List<String> muscles;
+    private String exercises;
+    private String muscles;
 
     public WorkoutData() {  }
 
-    public WorkoutData(String title, List<ExerciseData> exercises, List<String> muscles) {
+    public WorkoutData(String title, String exercises, String muscles) {
         this.title = title;
         this.exercises = exercises;
         this.muscles = muscles;
@@ -23,19 +23,19 @@ public class WorkoutData {
         this.title = title;
     }
 
-    public List<ExerciseData> getExercises() {
+    public String getExercises() {
         return exercises;
     }
 
-    public void setExercises(List<ExerciseData> exercises) {
+    public void setExercises(String exercises) {
         this.exercises = exercises;
     }
 
-    public List<String> getMuscles() {
+    public String getMuscles() {
         return muscles;
     }
 
-    public void setMuscles(List<String> muscles) {
+    public void setMuscles(String muscles) {
         this.muscles = muscles;
     }
 }

@@ -2,37 +2,27 @@ import React, { useState } from "react";
 import "./popUPSaveGW.css"
 
 function PopUpSave(props) {
-    const [exercises, setExercises] = useState([])
-
     const handleSave = () => {
         const username = sessionStorage.getItem("username")
         const size = props.exercises.length
+        const DELIMITER = "___"
 
-        const newExercises = []
+        let exercises = ""
 
         for(let i = 0; i < size; i++) {
-            let exercise = { name: props.exercises[i].properties.exercise_name.value, reps: props.reps[i], sets: props.sets[i] }
-            newExercises.push(exercise)
-            console.log(exercise)
+            let exercise = props.exercises[i].properties.exercise_name.value.toString() + DELIMITER + props.reps[i].toString() + DELIMITER + props.sets[i].toString()
+            
+            if(exercises === "")
+                exercises = exercise
+            else
+                exercises = exercises.concat(DELIMITER, exercise)
         }
-
-        console.log(props.exercises)
-        console.log(size)
-        console.log(username)
-        console.log(newExercises)
-        console.log(newExercises)
-
-        console.log(newExercises)
-
-        setExercises(newExercises)
 
         const workout = {
             title: document.getElementById("title").value,
             exercises: exercises,
-            muscles: props.muscles
+            muscles: props.muscles.toString().replaceAll(',', DELIMITER)
         }
-
-        console.log(workout)
 
         fetch(`/rest/${username}/workout`, {
             method: 'POST',

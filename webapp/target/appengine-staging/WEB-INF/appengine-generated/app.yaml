@@ -6,7 +6,7 @@ derived_file_type:
 threadsafe: True
 auto_id_policy: default
 beta_settings:
-  'source_reference': 'https://github.com/P3rdigas/IPM_Project.git#ced13413f033e127865589052cddf89164ddccd2'
+  'source_reference': 'https://github.com/P3rdigas/IPM_Project.git#8b6dcc6935944372e0e392a8ce453816f5f585ae'
 api_version: 'user_defined'
 handlers:
 - url: (/.*/)

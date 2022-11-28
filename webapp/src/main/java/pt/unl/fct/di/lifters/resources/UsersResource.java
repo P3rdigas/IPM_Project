@@ -51,7 +51,7 @@ public class UsersResource {
     @POST
     @Path("/workout")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response registerProperty(@PathParam("username") String username, WorkoutData data) {
+    public Response addWorkout(@PathParam("username") String username, WorkoutData data) {
 
         Key userKey = datastore.newKeyFactory().setKind("User").newKey(username);
 
@@ -70,8 +70,8 @@ public class UsersResource {
 
             Entity property = Entity.newBuilder(workoutKey).set("workout_user", username)
                     .set("workout_title", data.getTitle())
-                    .set("workout_exercises", (Value<?>) data.getExercises())
-                    .set("workout_muscles", (Value<?>) data.getMuscles())
+                    .set("workout_exercises",  data.getExercises())
+                    .set("workout_muscles", data.getMuscles())
                     .build();
 
             txn.add(property);
@@ -79,6 +79,43 @@ public class UsersResource {
 
             return Response.ok(g.toJson(property)).build();
 
+        } finally {
+            if (txn.isActive())
+                txn.rollback();
+        }
+    }
+
+    @GET
+    @Path("/workouts")
+    public Response getWorkouts(@PathParam("username") String username) {
+
+        Key userKey = datastore.newKeyFactory().setKind("User").newKey(username);
+
+        Transaction txn = datastore.newTransaction();
+
+        try {
+            
+            Entity user = txn.get(userKey);
+
+            if (user == null) {
+                txn.rollback();
+                return Response.status(Status.NOT_FOUND).entity("User doesn't exists.").build();
+            }
+
+            List<Entity> list = new ArrayList<>();
+
+            Query<Entity> query = Query.newEntityQueryBuilder().setKind("Exercises")
+                    .setFilter(PropertyFilter.eq("workout_user", username)).build();
+
+            QueryResults<Entity> logs = datastore.run(query);
+
+            logs.forEachRemaining(exercise -> {
+                list.add(exercise);
+            });
+
+            txn.commit();
+
+            return Response.ok(g.toJson(list)).build();
         } finally {
             if (txn.isActive())
                 txn.rollback();

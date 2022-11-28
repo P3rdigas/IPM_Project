@@ -41,9 +41,10 @@ function CardGeneratedWorkout(props) {
     const [exercises, setExercises] = useState([])
     const [reps, setReps] = useState([])
     const [sets, setSets] = useState([])
-    const muscles = props.muscles.toString().replaceAll(',', '_')
 
     const handleGenerate = () => {
+        const muscles = props.muscles.toString().replaceAll(',', '_')
+
         if(props.muscles.length > 0) {
             setIsPending(true)
 
@@ -112,7 +113,7 @@ function CardGeneratedWorkout(props) {
                             <span style={{fontSize: 24}}>Save</span>
                         </div>
                     </div>
-                    <PopUpSave trigger={buttonPopUp} setTrigger={setButtonPopup}  exercises={exercises} reps={reps} sets={sets} muscles={muscles}/>
+                    <PopUpSave trigger={buttonPopUp} setTrigger={setButtonPopup}  exercises={exercises} reps={reps} sets={sets} muscles={props.muscles}/>
                 </div>
         :
                 <div className='card-generated-workout-without-content' >

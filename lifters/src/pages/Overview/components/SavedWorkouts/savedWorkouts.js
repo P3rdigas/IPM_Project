@@ -26,12 +26,14 @@ let INITIAL_CARDS = [
     { id: "8", title: '8Legs Workout', body: 'Left Leg', body2: 'Right Leg', body3: 'Middle Leg', exercises:GENERATED_WORKOUT},
   ];
 
-function SavedWorkouts() {
+function SavedWorkouts(props) {
     const [cards, setCards] = useState(INITIAL_CARDS);
 
     const deleteCard = (index) => {
         setCards(cards => cards.filter((item, i) => i !== index));
     };
+
+    console.log(props.workouts)
 
     return (
         <div className='saved-wo'>
