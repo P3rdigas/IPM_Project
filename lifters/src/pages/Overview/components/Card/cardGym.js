@@ -8,23 +8,25 @@ import { FiTrash2 } from "react-icons/fi";
 
 import './cardGym.css'
 
-function CardGym({index, title, body, body2, body3, handleDelete, buttonO, openPop}) {
+function CardGym(props) {
+  /*
+  onClick={props.handleDelete(props.id)}
+  onClick={props.openPop(props.id)}
+   */
   return (
     <div className='cardf'>
     <Card sx={{ minWidth: 250, maxWidth:250, minHeight: 230, maxHeight:230}}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {title}
+          {props.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {body}<br/>
-          {body2}<br/>
-          {body3}
+          {props.tags}<br/>
         </Typography>
       </CardContent>
       <CardActions>
-        <FiTrash2 className='workout-card-trashcan' onClick={() => handleDelete(index)}/>
-        <GrCircleInformation className='workout-card-info' onClick={() => openPop(index)}/>   
+        <FiTrash2 className='workout-card-trashcan' />
+        <GrCircleInformation className='workout-card-info' />   
       </CardActions>
     </Card>
     </div>

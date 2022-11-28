@@ -128,7 +128,7 @@
 				<version>${appengine.maven.plugin.version}</version>
 				<configuration>
 					<deploy.projectId>peppy-transit-369712</deploy.projectId>
-					<deploy.version>1</deploy.version>
+					<deploy.version>2</deploy.version>
 				</configuration>
 			</plugin>
 

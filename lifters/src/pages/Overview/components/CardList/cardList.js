@@ -15,8 +15,7 @@ const theme = createTheme({
 
 const FALSE_ARRAY = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
-function CardList({items, handleDelete}) {
-
+function CardList(props) {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -50,34 +49,34 @@ function CardList({items, handleDelete}) {
 const closePop = (index) => {
   setButtonPopup(prevState => prevState.map((item) => item=false))
 };
+/*
+
+handleDelete={props.handleDelete}
+                       buttonO={buttonPopup}
+                       openPop={openPop}
+
+                       <Popup trigger={buttonPopup[i]} setTrigger={() => closePop(card.id)} title={card.title} exercises={card.exercises}></Popup>
+*/
 
   return (  
     <Container>
       <ThemeProvider theme={theme}>
         <Grid container rowSpacing={4} spacing={sp}>
-            {items.map((card, i) => (
+            {props.items.map((card, i) => (
               <Grid item key={card.id} sm={12} md={6} lg={4} xl={3}>
                 <Grid>
                    <CardGym
-                       index={i}
-                       key={card.id}
+                       id={card.id}
                        title={card.title}
-                       body={card.body}
-                       body2={card.body2}
-                       body3={card.body3}
-                       handleDelete={() => handleDelete(i)}
-                       buttonO={buttonPopup}
-                       openPop={() => openPop(i)}
+                       tags={card.tags}
+                       
                    />
                 </Grid>
                 
-                  <Popup trigger={buttonPopup[i]} setTrigger={() => closePop(i)} title={card.title} exercises={card.exercises}></Popup>  
-                </Grid>
-                
-                      
+                  
+              </Grid> 
             ))}
         </Grid>
-        
         </ThemeProvider>
     </Container>    
   );

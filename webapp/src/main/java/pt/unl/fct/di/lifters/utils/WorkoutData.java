@@ -1,7 +1,5 @@
 package pt.unl.fct.di.lifters.utils;
 
-import java.util.List;
-
 public class WorkoutData {
     private String title;
     private String exercises;

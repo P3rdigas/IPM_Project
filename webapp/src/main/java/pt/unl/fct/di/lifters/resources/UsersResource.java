@@ -3,12 +3,7 @@ package pt.unl.fct.di.lifters.resources;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -103,6 +98,30 @@ public class UsersResource {
             txn.commit();
 
             return Response.ok(g.toJson(list)).build();
+        } finally {
+            if (txn.isActive())
+                txn.rollback();
+        }
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response deleteWorkout(@PathParam("id") String workoutId) {
+        Key workoutKey = datastore.newKeyFactory().setKind("Workout").newKey(Long.parseLong(workoutId));
+
+        Transaction txn = datastore.newTransaction();
+
+        try {
+            Entity workout = txn.get(workoutKey);
+
+            if(workout == null) {
+                txn.rollback();
+                return Response.status(Status.NOT_FOUND).entity("Workout doesn't exists.").build();
+            }
+
+            txn.delete(workoutKey);
+            return Response.ok().build();
+
         } finally {
             if (txn.isActive())
                 txn.rollback();
