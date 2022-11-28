@@ -14,13 +14,26 @@ function CardExercisesPerMuscleCW(props) {
             values: {sm: 0, md: 1160, lg: 1580, xl: 1900}
         }
     });
+
+    function generateHeight(){
+        const tags= document.getElementById("tags-height-div");
+        if (tags == null){
+            return "90%";
+        }
+        const heightCard= document.getElementById("card").offsetHeight.toPrecision();
+        const tagsHeight = tags.offsetHeight.toPrecision()
+        const pertentageTagsHeight =  tagsHeight/heightCard;
+        const heightExercises = (0.85 - pertentageTagsHeight)*100;
+        return `${heightExercises}%`;
+    }
+
     return(
-        <div className='card-exercises-per-muscle-cw'>
+        <div id="card" className='card-exercises-per-muscle-cw'>
             <Typography gutterBottom variant="h4" component="div">
                 Exercises
             </Typography>
             <div className="tag-conj-muscle-gw">
-                <Container>
+                <Container id="tags-height-div">
                     <ThemeProvider theme={theme}>
                         <Grid container rowSpacing={4} spacing={sp}>
                             {props.muscles.map((muscle, i) => (
@@ -34,9 +47,9 @@ function CardExercisesPerMuscleCW(props) {
                     </ThemeProvider>
                 </Container>
             </div>
-            <div className="exercises-muscle-conj-card-cw" >
+            <div className="exercises-muscle-conj-card-cw" style={{"height": generateHeight()}}>
                 {props.exercises.map((item, i) => (
-                    <ExercisesCardLeftCW cards={props.cards} setCards={props.setCards} name={props.exercises[i].name} exercise={props.exercises[i]} key={i}/>
+                    <ExercisesCardLeftCW cards={props.cards} setCards={props.setCards} name={item.properties.exercise_name.value} exercise={item} key={i}/>
                 ))}
             </div>
         </div>

@@ -5,11 +5,7 @@ import React from "react";
 
 function ExercisesCardLeftCW(props) {
     const dragStarted=(e,exercise) =>{
-        e.dataTransfer.setData("exerciseName",exercise.name)
-    }
-    const dragEnds=(e)=>{
-        let removeEmply = props.cards.filter((item) => item.name !== "vazio")
-        props.setCards([...removeEmply])
+        e.dataTransfer.setData("exerciseName",props.name)
     }
     return(
         <div draggable onDragStart={(e) =>dragStarted(e,props.exercise)}  className="exercise-muscle-card-cw">

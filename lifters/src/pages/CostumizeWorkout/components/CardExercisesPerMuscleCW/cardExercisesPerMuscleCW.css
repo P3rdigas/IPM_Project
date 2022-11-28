@@ -9,13 +9,12 @@
 }
 
 .exercises-muscle-conj-card-cw {
-    height: 94%;
     overflow:scroll;
     overflow-x:hidden;
 }
 
 .tag-conj-muscle-gw{
-    margin:9% 0 0 0;
+    margin:9% 0 3% 0;
     width:110%;
 }
 

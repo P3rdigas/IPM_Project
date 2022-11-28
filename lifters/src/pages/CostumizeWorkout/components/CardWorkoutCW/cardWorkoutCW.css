@@ -71,15 +71,33 @@
 .reps-card-cw {
     border-radius: 10px;
     background-color: #DBDBDB;
+    border-style: hidden;
     height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 90px;
     padding: 5px 10px;
-    margin: 20px 10px;
+    margin: 20px 5px;
+    font-size: 20px
 }
 
+/* Chrome, Safari, Edge, Opera */
+.conj-reps-set-card-cw input::-webkit-outer-spin-button,
+.conj-reps-set-card-cw input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.conj-reps-set-card-cw input[type=number] {
+    -moz-appearance: textfield;
+    outline: none;
+}
+.conj-reps-set-card-cw input[type=number]:focus {
+    -moz-appearance: textfield;
+    outline: 2px solid black;
+}
 
 .info-icon-cw {
     transition: 0.3s;

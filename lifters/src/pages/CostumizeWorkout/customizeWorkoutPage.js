@@ -4,23 +4,17 @@ import CardWorkoutCW from "./components/CardWorkoutCW/cardWorkoutCW";
 import CardExercisesPerMuscleCW from "./components/CardExercisesPerMuscleCW/cardExercisesPerMuscleCW";
 import React,{ useState } from "react";
 
-let GENERATED_WORKOUT = [
-    {name: 'Bicep Curl', reps: "12", sets:"3"},
-    {name: 'Rows', reps: "8", sets:"3"},
-    {name: 'Pull up', reps: "15", sets:"4"},
-    {name: 'Preacher Curl', reps: "15", sets:"4"},
-    {name: 'Bench Press', reps: "12", sets:"3"},
-    {name: 'Military Press', reps: "8", sets:"3"},
-];
 
 
 function CustomizeWorkoutPage() {
     const [cards,setCards] = useState([])
+    const [muscles, setMuscles] = useState([])
+
     return(
         <div className="customize-workout-page-global">
             <Navbar/>
-            <HumanModel3DCW exercises={GENERATED_WORKOUT}/>
-            <CardWorkoutCW exercises={GENERATED_WORKOUT} cards={cards} setCards={setCards}/>
+            <HumanModel3DCW muscles={muscles} setMuscles={setMuscles}/>
+            <CardWorkoutCW  muscles={muscles} cards={cards} setCards={setCards}/>
         </div>
     )
 }

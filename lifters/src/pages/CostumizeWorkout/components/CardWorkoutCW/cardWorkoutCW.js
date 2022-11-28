@@ -7,6 +7,7 @@ import PopUPSaveCW from "../PopUPSaveCW/popUPSaveCW";
 
 function CardWorkoutCW(props) {
     const [buttonPopUp,setButtonPopup] = useState(false)
+    const [exercisesForSubmit,setExercisesForSubmit] = useState(String)
 
     const draggingOver=(e)=>{
         e.preventDefault()
@@ -36,7 +37,7 @@ function CardWorkoutCW(props) {
     }
     const dragDrop=(e)=>{
         let exerciseName = e.dataTransfer.getData("exerciseName")
-        let card={name:exerciseName, reps:"10", sets:"3"}
+        let card={name:exerciseName}
 
         if (props.cards.length === 0){
             props.setCards([card])
@@ -59,6 +60,24 @@ function CardWorkoutCW(props) {
         props.setCards(props.cards.filter((item,id) => id !== idParam));
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const DELIMITER = "___"
+        let exercisesForSubmitAux = ""
+        for (let i = 0; i < props.cards.length; i++) {
+            if (props.cards[i].name !== "vazio"){
+                let reps=  document.getElementById(`${props.id}reps`).value;
+                let sets=  document.getElementById(`${props.id}sets`).value;
+                let exercise = props.cards[i].name.toString() + DELIMITER + reps.toString() + DELIMITER + sets.toString()
+                if(exercisesForSubmitAux === "")
+                    exercisesForSubmitAux = exercise
+                else
+                    exercisesForSubmitAux = exercisesForSubmitAux.concat(DELIMITER, exercise)
+            }
+        }
+        setExercisesForSubmit(exercisesForSubmitAux);
+    }
+
     return(
         <div className='card-workout-cw'>
             <div>
@@ -66,19 +85,21 @@ function CardWorkoutCW(props) {
                     Your Workout
                 </Typography>
                 <div onDragOver={(e)=> draggingOver(e)} onDrop={(eDrop)=>dragDrop(eDrop)} className="exercises-conj-card-cw">
-                    {props.cards.map((card, i) => (
-                        props.cards[i].name !== "vazio"?
-                        <ExercisesCardRightCW id={i} name={card.name} reps={card.reps} sets={card.sets} key={i} handleDelete={handleDelete}/>
-                        :
-                        <div className="exercise-empty-for-drag-card-cw" ></div>
-                    ))}
+                    <form onSubmit={handleSubmit}>
+                        {props.cards.map((card, i) => (
+                            props.cards[i].name !== "vazio"?
+                            <ExercisesCardRightCW id={i} name={card.name} key={i} handleDelete={handleDelete}/>
+                            :
+                            <div className="exercise-empty-for-drag-card-cw" ></div>
+                        ))}
+                    </form>
                 </div>
             </div>
-            <div className="save-card-cw" onClick={() => setButtonPopup(true)}>
+            <button type="submit" className="save-card-cw" onClick={() => setButtonPopup(true)}>
                 <TfiSave size={23}/>
                 <span style={{fontSize: 24}}>Save</span>
-            </div>
-            <PopUPSaveCW trigger={buttonPopUp} setTrigger={setButtonPopup}/>
+            </button>
+            <PopUPSaveCW muscles={props.muscles} exercisesForSubmit={exercisesForSubmit} trigger={buttonPopUp} setTrigger={setButtonPopup}/>
         </div>
     )
 }
