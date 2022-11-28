@@ -1,0 +1,130 @@
+.calendar-dropdown {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    user-select: none;
+}
+
+.calendar-dropdown .calendar-dropdown-btn {
+    position: relative;
+    padding:10px;
+    height: 90%;
+    top:5%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.06);
+}
+
+.calendar-dropdown .calendar-dropdown-content {
+    position: absolute;
+    top:110%;
+    left:3%;
+    width: 94%;
+    padding: 15px;
+    background-color: #fff;
+    z-index: 500;
+    box-shadow: 3px 3px 10px 6px rgb(0, 0, 0, 0.1);
+}
+
+.calendar-dropdown .calendar-dropdown-content .calendar-dropdown-item {
+    padding:7px;
+    cursor:pointer;
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+    padding:10px;
+    cursor:pointer;
+    background-color: #f4f4f4;
+}
+
+.calendar-popup {
+    padding: 20px;
+}
+
+.calendar-popup-divs {
+    padding: 40px;
+    text-align: center;
+}
+
+.calendar-popup-pickdate {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-popup-dropdown {
+    padding: 70px;
+}
+
+.popup-cal {
+    position: fixed;
+    top:0px;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);    
+}
+
+.pop-cal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+    max-height: 350px;
+    background-color: #FFF;
+    box-shadow: 20px 20px 15px -2px rgb(80, 80, 80, 0.6);
+}
+
+.pop-cal .popup-close-cal {
+    position: absolute;
+    top:16px;
+    right:20px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.pop-cal .popup-close-cal:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.calendar-element {
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    z-index: 1000;
+}
+
+.calendar-save-button {
+    transition: 0.3s;
+    transform: scale(1);
+    border-radius: 10px;
+    background-color: #258c17;
+    position: absolute;
+    top:75%;
+    left:40%;
+    width: 20%;
+    height: 12%;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.calendar-save-button:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}

@@ -16,8 +16,6 @@ import 'react-date-range/dist/theme/default.css';
 function InjuriesSelect(props) {
 
     const dropOptions1 = ['Light', 'Medium', 'Severe']
-    const dropOptions2 = ['Days', 'Weeks', 'Months']
-    const dropOptions3 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18']
     const arr = []
 
     const [selected, setSelected] = useState("Seriousness");

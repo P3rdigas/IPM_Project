@@ -1,40 +1,32 @@
 import React from 'react'
-import './popup.css'
+import './editPopup.css'
 import {GrCircleInformation} from "react-icons/gr";
 import {AiFillEdit} from 'react-icons/ai'
 import {BiXCircle} from "react-icons/bi";
 import { Link } from 'react-router-dom'
 
-function Popup(props) {
+function EditPopup(props) {
     return (props.trigger) ? (
         <div className='popup'>
             <div className='pop'>
                 <BiXCircle className = 'popup-close' onClick={() => props.setTrigger(false)} size={40}></BiXCircle>                
-                <div className='overview-cardGeneratedWorkout'>
-                    <h1>{props.title}</h1>
-                    <div>
-                        {props.exercises.map((name,i) => (
-                            <div className="overview-exercise-card-gw" key={i}>
-                                <span style={{fontSize: 24}}>{props.exercises[i].name}</span>
+                <div className='exercises-cardGeneratedWorkout'>
+                    <h1>{props.event.title}</h1>
+                    <div className='scroll-popup'>
+                        {props.event.exercises.map((name,i) => (
+                            <div className="exercise-exercise-card-gw" key={i}>
+                                <span style={{fontSize: 24}}>{props.event.exercises[i].name}</span>
                                 <div className="overview-conj-reps-set-card-gw">
                                     <div className="overview-reps-card-gw">
-                                        <span text-align= 'center' style={{fontSize: 24}}>{props.exercises[i].reps} sets</span>
+                                        <span text-align= 'center' style={{fontSize: 24}}>{props.event.exercises[i].sets} sets</span>
                                     </div>
                                     <div className="overview-reps-card-gw">
-                                        <span style={{fontSize: 24}}>{props.exercises[i].reps} reps</span>
+                                        <span style={{fontSize: 24}}>{props.event.exercises[i].reps} reps</span>
                                     </div>
                                     <GrCircleInformation className="overview-info-icon-gw" size={35} onClick={console.log("yauu")}/>
                                 </div>
                             </div>
                         ))}
-                    </div>
-                    <div className="overview-conj-save-reload-buttons">
-                        <div className="overview-reload-card-gw">
-                            <Link to="/">
-                            <AiFillEdit className="exercise-edit-bt" size={50}/>
-                            </Link>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
@@ -42,4 +34,4 @@ function Popup(props) {
 
     ) : "";
 }
-export default Popup
+export default EditPopup
