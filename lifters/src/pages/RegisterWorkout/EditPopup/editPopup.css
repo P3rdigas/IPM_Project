@@ -61,18 +61,15 @@
 .scroll-popup {
     overflow:scroll;
     overflow-x:hidden;
-    height: 530px;
+    height: 450px;
     position: relative;
     top:20px;
 }
 
 .exercise-exercise-card-gw {
-    border-radius: 10px;
+
     background-color: #DBDBDB;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 10px;
     width: 90%;
     padding: 10px 10px;
     margin: 20px 0px;
@@ -80,6 +77,11 @@
     left:5%;
     
     
+}
+
+.kg-rep-card {
+    display: flex;
+    align-items: center;
 }
 
 .overview-reps-card-gw {
@@ -95,19 +97,22 @@
     flex-direction: column;
 }
 
-.overview-conj-reps-set-card-gw {
+.exercise-conj-reps-set-card-gw {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 }
 
-.overview-info-icon-gw {
+.exercises-info-icon-gw {
     transition: 0.3s;
     transform: scale(1);
     cursor: pointer;
+    position: absolute;
+    right:430px;
+    top:10px;
 }
 
-.overview-info-icon-gw:hover {
+.exercises-info-icon-gw:hover {
     transition: 0.3s;
     transform: scale(1.1);
 }
@@ -126,4 +131,62 @@
 .exercise-edit-bt:hover {
     transition: 0.3s;
     transform: scale(1.1);
+}
+
+.confirm-card-calendar {
+    transition: 0.3s;
+    transform: scale(1);
+    border-radius: 10px;
+    position: relative;
+    background-color: #258c17;
+    width: 40%;
+    left:29%;
+    height: 45px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    margin: 40px 0px;
+    cursor: pointer;
+}
+
+.add-set-card-calendar {
+    transition: 0.3s;
+    transform: scale(1);
+    border-radius: 10px;
+    position: relative;
+    background-color: #258c17;
+    width: 40%;
+    left:30%;
+    height: 45px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.kgs-card-cw {
+    border-radius: 10px;
+    background-color: #DBDBDB;
+    border-style: hidden;
+    top:-15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    padding: 5px 10px;
+    margin: 20px 5px;
+    font-size: 20px
+}
+
+.exercise-kgs-card-gw {
+    border-radius:10px;
+    border:1px solid #000;
+    height: 45px;
+    top:0px;
+    position: relative;
 }

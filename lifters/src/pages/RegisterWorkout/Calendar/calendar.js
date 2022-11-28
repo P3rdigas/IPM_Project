@@ -18,7 +18,7 @@ let SAVED_WORKOUTS = [
     {name: 'Preacher Curl', reps: "15", sets:"4", kgPerSet:[]},
     {name: 'Bicep Curl', reps: "12", sets:"3", kgPerSet:[]},
 ]},
-{title: 'Vareta Workout', exercises:[
+{title: 'Back Workout', exercises:[
   {name: 'Bicep Curl', reps: "12", sets:"3", kgPerSet:[]},
   {name: 'Rows', reps: "8", sets:"3",kgPerSet:[]},
   {name: 'Pull up', reps: "15", sets:"4", kgPerSet:[]},
