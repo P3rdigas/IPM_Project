@@ -11,7 +11,7 @@ function PopUPSaveCW(props){
         const DELIMITER = "___"
 
         const workout = {
-            title: document.getElementById("workoutName").value,
+            title: document.getElementById("workout-name").value,
             exercises: props.exercisesForSubmit,
             muscles: props.muscles.toString().replaceAll(',', DELIMITER)
         }
@@ -21,6 +21,7 @@ function PopUPSaveCW(props){
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(workout)
         }).then(response => {
+            console.log(response)
             setIsPending(false)
             if(response.ok) {
                 alert("Workout added successfully")
@@ -32,6 +33,7 @@ function PopUPSaveCW(props){
                 })
             }
         })
+        props.setTrigger(false)
     }
 
     return(props.trigger) ? (
@@ -40,15 +42,15 @@ function PopUPSaveCW(props){
                 <h1>Insert Workout's Name</h1>
                 <form onSubmit={handleSave}>
                     <input id="workout-name" className="text-box-popup-cw" type="text"  placeholder='e.g. Chest Intense Workout' required/>
-                </form>
-                <div className="conj-confirm-cancel-buttons-cw">
-                    <div className="cancel-card-cw" onClick={()=> props.setTrigger(false)}>
-                        <span style={{fontSize: 22}}>Cancel</span>
+                    <div className="conj-confirm-cancel-buttons-cw">
+                        <div className="cancel-card-cw" onClick={()=> props.setTrigger(false)}>
+                            <span style={{fontSize: 22}}>Cancel</span>
+                        </div>
+                        <button type="submit" disabled={isPending} className="confirm-card-cw">
+                            <span style={{fontSize: 22}}>Confirm</span>
+                        </button>
                     </div>
-                    <button type="submit" disabled={isPending} className="confirm-card-cw">
-                        <span style={{fontSize: 22}}>Confirm</span>
-                    </button>
-                </div>
+                </form>
             </div>
         </div>
     ):"";

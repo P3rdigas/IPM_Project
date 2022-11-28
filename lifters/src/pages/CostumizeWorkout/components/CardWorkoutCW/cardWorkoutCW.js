@@ -35,6 +35,7 @@ function CardWorkoutCW(props) {
             console.log(props.cards)
         }
     }
+
     const dragDrop=(e)=>{
         let exerciseName = e.dataTransfer.getData("exerciseName")
         let card={name:exerciseName}
@@ -64,41 +65,49 @@ function CardWorkoutCW(props) {
         e.preventDefault()
         const DELIMITER = "___"
         let exercisesForSubmitAux = ""
-        for (let i = 0; i < props.cards.length; i++) {
-            if (props.cards[i].name !== "vazio"){
-                let reps=  document.getElementById(`${props.id}reps`).value;
-                let sets=  document.getElementById(`${props.id}sets`).value;
-                let exercise = props.cards[i].name.toString() + DELIMITER + reps.toString() + DELIMITER + sets.toString()
-                if(exercisesForSubmitAux === "")
-                    exercisesForSubmitAux = exercise
-                else
-                    exercisesForSubmitAux = exercisesForSubmitAux.concat(DELIMITER, exercise)
-            }
+        if (props.cards.length === 0){
+            alert("No Exercises in your workout")
         }
-        setExercisesForSubmit(exercisesForSubmitAux);
+        else {
+            for (let i = 0; i < props.cards.length; i++) {
+                if (props.cards[i].name !== "vazio") {
+                    let reps = document.getElementById(`${i}reps`).value;
+                    let sets = document.getElementById(`${i}sets`).value;
+                    let exercise = props.cards[i].name.toString() + DELIMITER + reps.toString() + DELIMITER + sets.toString()
+                    if (exercisesForSubmitAux === "")
+                        exercisesForSubmitAux = exercise
+                    else
+                        exercisesForSubmitAux = exercisesForSubmitAux.concat(DELIMITER, exercise)
+                }
+            }
+            setExercisesForSubmit(exercisesForSubmitAux);
+            setButtonPopup(true)
+        }
     }
 
     return(
-        <div className='card-workout-cw'>
-            <div>
-                <Typography gutterBottom variant="h4" component="div">
-                    Your Workout
-                </Typography>
-                <div onDragOver={(e)=> draggingOver(e)} onDrop={(eDrop)=>dragDrop(eDrop)} className="exercises-conj-card-cw">
-                    <form onSubmit={handleSubmit}>
-                        {props.cards.map((card, i) => (
-                            props.cards[i].name !== "vazio"?
-                            <ExercisesCardRightCW id={i} name={card.name} key={i} handleDelete={handleDelete}/>
-                            :
-                            <div className="exercise-empty-for-drag-card-cw" ></div>
-                        ))}
-                    </form>
+        <div>
+            <form className='card-workout-cw' onSubmit={handleSubmit}>
+                <div>
+                    <Typography gutterBottom variant="h4" component="div">
+                        Your Workout
+                    </Typography>
+                    <div onDragOver={(e)=> draggingOver(e)} onDrop={(eDrop)=>dragDrop(eDrop)} className="exercises-conj-card-cw">
+
+                            {props.cards.map((card, i) => (
+                                props.cards[i].name !== "vazio"?
+                                <ExercisesCardRightCW id={i} name={card.name} key={i} handleDelete={handleDelete}/>
+                                :
+                                <div className="exercise-empty-for-drag-card-cw" ></div>
+                            ))}
+
+                    </div>
                 </div>
-            </div>
-            <button type="submit" className="save-card-cw" onClick={() => setButtonPopup(true)}>
-                <TfiSave size={23}/>
-                <span style={{fontSize: 24}}>Save</span>
-            </button>
+                <button type="submit" className="save-card-cw">
+                    <TfiSave size={23}/>
+                    <span style={{fontSize: 24}}>Save</span>
+                </button>
+            </form>
             <PopUPSaveCW muscles={props.muscles} exercisesForSubmit={exercisesForSubmit} trigger={buttonPopUp} setTrigger={setButtonPopup}/>
         </div>
     )
