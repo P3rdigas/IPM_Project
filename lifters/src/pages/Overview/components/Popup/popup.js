@@ -33,7 +33,6 @@ function Popup(props) {
                             <Link to="/">
                             <AiFillEdit className="exercise-edit-bt" size={50}/>
                             </Link>
-                            
                         </div>
                     </div>
                 </div>

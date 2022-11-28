@@ -12,8 +12,6 @@ const GENERATED_WORKOUT = [
     {name: 'Rows', reps: "8", sets:"12"},
     {name: 'Bicep Curl', reps: "12", sets:"3"},
     {name: 'Rows', reps: "8", sets:"12"},
-
-
 ];
 let INITIAL_CARDS = [
     { id: "1", title: '1Legs Workout', body: 'Left Leg', body2: 'Right Leg', body3: 'Middle Leg', exercises:GENERATED_WORKOUT},
@@ -27,7 +25,7 @@ let INITIAL_CARDS = [
 ];
 
 function Overview() {
-    const [workouts, setWorkouts] = useState(INITIAL_CARDS)
+    const [workouts, setWorkouts] = useState([])
     const username = sessionStorage.getItem("username")
 
     useEffect(() => {
@@ -38,24 +36,23 @@ function Overview() {
             if(response.ok) {
                 return response.json()
             } else {
-                return response.text().then(text => { 
+                return response.text().then(text => {
                     alert(text)
-                    throw new Error(text) 
+                    throw new Error(text)
                 })
             }
         }).then(data => {
-            let workouts = [] 
-
+            let workouts = []
             for(let i = 0; i < data.length; i++) {
                 let workout = data[i].properties;
                 workouts.push( { id: data[i].key.path[0].id.toString(), title: workout.workout_title.value, tags: workout.workout_muscles.value, exercises: workout.workout_exercises.value} )
             }
-
             setWorkouts(workouts)
         })
     }, [])
 
-    const handleDelete = (id) => {
+    const handleDeleteCardsSW = (id) => {
+
         fetch(`/rest/${username}/${id}`, {
             method: 'DELETE',
             headers: { "Content-Type": "application/json" }
@@ -63,9 +60,9 @@ function Overview() {
             if(response.ok) {
                 setWorkouts(workouts => workouts.filter((item, i) => item.id !== id))
             } else {
-                return response.text().then(text => { 
+                return response.text().then(text => {
                     alert(text)
-                    throw new Error(text) 
+                    throw new Error(text)
                 })
             }
         })
@@ -76,7 +73,7 @@ function Overview() {
             <Navbar />
             <div className='overview-elements'>
                 <div className='overview-left-column'>
-                    <SavedWorkouts workouts={workouts} handleDelete={handleDelete}/>
+                    <SavedWorkouts workouts={workouts} handleDeleteCardsSW={handleDeleteCardsSW}/>
                 </div>
             </div>                 
         </div>
