@@ -79,7 +79,7 @@ function Navbar() {
                         <GiHealthDecrease className="icon-element-bar"/>
                         <Link to="/injuries" className='pop-up-navbar-menu-item-link'>Register Injuries</Link>
                     </div>
-                    <div className="pop-up-element-navbar" onClick={logOut()}>
+                    <div className="pop-up-element-navbar" onClick={() => logOut()}>
                         <FiLogOut className="icon-element-bar"/>
                         <Link to="/" className='pop-up-navbar-menu-item-link'>Log Out</Link>
                     </div>
