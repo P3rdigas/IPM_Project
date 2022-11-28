@@ -31,12 +31,12 @@ function InjuriesSelect(props) {
     ]);
     const [open, setOpen] = useState(false)
 
-    const handleChange = (name, s, n, m, fun) => {
+    const handleChange = (id,name, s, n, m, fun) => {
         if(fun === 'add') {
-            setNewArray(newArray => [...newArray, {name: name, seriousness:s, startDate:n, endDate:m}])
+            setNewArray(newArray => [...newArray, {id:id, name: name, seriousness:s, startDate:n, endDate:m}])
         }
         else {
-            setNewArray(injury => injury.filter((item, i) => (item.name !== name || item.seriousness !== s || item.startDate !== n || item.endDate !== m)));
+            setNewArray(injury => injury.filter((item, i) => (item.id !== id)));
         }
         
     }
@@ -67,44 +67,45 @@ function InjuriesSelect(props) {
             <Typography gutterBottom variant="h4" component="div">
                 Injuries
             </Typography>
-            <div className='injuries-s-box1'>
-                
-                    <div className='injuries-s-box1-card'>
+            <div className='injuries-s-box1'>{
+                (props.parts.length > 0) ?(
+                <div className='injuries-s-box1-card'>
+                    <div>
+                        <span style={{fontSize: 24}}>{props.parts}</span>
+                    </div>
+                    <div className='injuries-s-dropdown'>
+                        <Dropdown optionsR={dropOptions1} selected={selected} setSelected={setSelected} />
+                    </div>
+                    <div className='injuries-s-date'>
                         <div>
-                            <span style={{fontSize: 24}}>{props.parts}</span>
+                            <span style={{fontSize: 14, color: 'grey'}}>Recovery Time</span>
+                            <input  value= {` ${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
+                                readOnly
+                                className='inputBox'
+                                onClick={(() => setOpen(open => !open))}
+                            />
+
                         </div>
-                        <div className='injuries-s-dropdown'>
-                            <Dropdown optionsR={dropOptions1} selected={selected} setSelected={setSelected} />
-                        </div>
-                        <div className='injuries-s-date'>
-                            <div>
-                                <span style={{fontSize: 14, color: 'grey'}}>Recovery Time</span>
-                                <input  value= {` ${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
-                                    readOnly
-                                    className='inputBox' 
-                                    onClick={(() => setOpen(open => !open))} 
+                        <div className='calend' ref={refOne}>
+                            {
+                                open &&
+                                <DateRangePicker
+                                    onChange={item => setRange([item.selection])}
+                                    editableDateInputs={true}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={range}
+                                    months={1}
+                                    direction='horizontal'
+                                    className="calendarElement"
                                 />
-                                    
-                            </div>
-                            <div className='calend' ref={refOne}> 
-                                {
-                                    open &&
-                                    <DateRangePicker                                        
-                                        onChange={item => setRange([item.selection])}
-                                        editableDateInputs={true}
-                                        moveRangeOnFirstSelection={false}
-                                        ranges={range}
-                                        months={1}
-                                        direction='horizontal'
-                                        className="calendarElement"
-                                    />
-                                }                                    
-                            </div>       
+                            }
                         </div>
                     </div>
-                
+                </div>
+                ):""
+            }
             </div>
-            <div className='injuries-s-button' onClick={()=> handleChange(props.parts, selected, selected3, selected2, 'add')}>
+            <div className='injuries-s-button' onClick={()=> handleChange(newArray.length,props.parts, selected, selected3, selected2, 'add')}>
                     <span style={{fontSize: 24}}>Confirm</span>
             </div>
             <div className='injuries-s-box2'>
@@ -122,7 +123,7 @@ function InjuriesSelect(props) {
                                 <span className='injury-card-info-text' style={{fontSize: 20}}>{newArray[i].endDate}</span>
                             </div>
 
-                            <BiXCircle className = 'injury-card-info-popup-close' size={35} onClick={() => handleChange(newArray[i].name,newArray[i].seriousness,newArray[i].startDate,newArray[i].endDate, 'delete')}></BiXCircle>
+                            <BiXCircle className = 'injury-card-info-popup-close' size={35} onClick={() => handleChange(newArray[i].id,newArray[i].name,newArray[i].seriousness,newArray[i].startDate,newArray[i].endDate, 'delete')}></BiXCircle>
                         </div>
                     </div>
                 ))}

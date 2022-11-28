@@ -9,9 +9,8 @@ function Model(props){
 
 function Muscle(props){
     const [hovered, setHover] = useState(false);
-    const muscleInMuscles = props.muscles.filter((item) => item === props.name).length > 0
     const handleClick = () => {
-        if (muscleInMuscles)
+        if (props.name === props.muscle)
             props.handleDelete(props.name)
         else
             props.handleSetMuscle(props.name);
@@ -25,24 +24,19 @@ function Muscle(props){
               scale={hovered ?[0.001, 0.001, 0.0008]: [0.0008, 0.0008, 0.0008]}
         >
             <sphereGeometry/>
-            <meshBasicMaterial  color={muscleInMuscles ? 'red' : 'green'}/>
+            <meshBasicMaterial  color={props.name === props.muscle ? 'red' : 'green'}/>
         </mesh>
     )
 }
 
-function HumanModel3DInjuries(){
-    const [muscles, setMuscles] = useState([])
+function HumanModel3DInjuries(props){
+
     const handleSetMuscle = (name) => {
-        if(muscles.filter((item) => item === name).length > 0) {
-            setMuscles(muscles.filter((item) => item !== name));
-        }
-        else {
-            const newMuscles = [name,...muscles]
-            setMuscles(newMuscles)
-        };
+        props.setMuscle(name)
     };
+
     const handleDelete = (name) => {
-        setMuscles(muscles.filter((item) => item !== name));
+        props.setMuscle("");
     }
     return (
         <Canvas dpr={[1,2]} shadows={true} camera={{fov:45}} style={{"position":"absolute" ,"width":"40%", "height":"90%"}}>
@@ -51,13 +45,13 @@ function HumanModel3DInjuries(){
                 <Stage environment={null}>
                     <Model scale={0.50}/>
                 </Stage>
-                <Muscle name="Bicep" position={[0.008, 0.01, 0.00055]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Chest" position={[0.0025, 0.015, 0.0025]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Triceps" position={[0.0075, 0.012, -0.003]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Leg"  position={[0.004,  -0.005, 0.0024]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Back"  position={[-0.002, 0.0135, -0.004]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Abs"  position={[0, 0.008, 0.0035]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
-                <Muscle name="Shoulders"  position={[-0.0075, 0.016, -0.001]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
+                <Muscle name="Bicep" position={[0.008, 0.01, 0.00055]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Chest" position={[0.0025, 0.015, 0.0025]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Triceps" position={[0.0075, 0.012, -0.003]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Leg"  position={[0.004,  -0.005, 0.0024]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Back"  position={[-0.002, 0.0135, -0.004]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Abs"  position={[0, 0.008, 0.0035]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
+                <Muscle name="Shoulders"  position={[-0.0075, 0.016, -0.001]} handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscle={props.muscle}/>
             </PresentationControls>
         </Canvas>
     )

@@ -4,15 +4,14 @@ import Navbar from "../../components/Navbar/navbar";
 import InjuriesSelect from './components/InjuriesSelect/injuriesSelect';
 import HumanModel3DInjuries from "./components/3DModelInjuries/3dmodelInjuries";
 
-const INJURED ='Bicep';
-;
 
 function InjuriesPage() {
+    const [muscle, setMuscle] = useState("")
     return(
         <div>
             <Navbar/>
-            <HumanModel3DInjuries/>
-            <InjuriesSelect parts={INJURED}/>
+            <HumanModel3DInjuries muscle={muscle} setMuscle={setMuscle}/>
+            <InjuriesSelect parts={muscle}/>
             
         </div>
     )
