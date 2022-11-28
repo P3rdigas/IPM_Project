@@ -4,49 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="977497df-534d-4085-91e6-3823694a58bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../lifters/src/pages/GeneratedWorkouts/components/CardGeneratedWorkout/cardGenereatedWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lifters/src/pages/GeneratedWorkouts/components/CardGeneratedWorkout/cardGenereatedWorkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lifters/src/pages/GeneratedWorkouts/components/PopUPSaveGW/popUPSaveGW.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lifters/src/pages/GeneratedWorkouts/components/PopUPSaveGW/popUPSaveGW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/resources/UsersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/resources/UsersResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/utils/WorkoutData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/utils/WorkoutData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/main.355b4821.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/main.355b4821.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.2d5d9923.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.2d5d9923.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.2d5d9923.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/__static__/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/__static__/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/css/main.355b4821.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/css/main.355b4821.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.2d5d9923.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.2d5d9923.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.2d5d9923.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/css/main.355b4821.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/css/main.355b4821.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.2d5d9923.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.2d5d9923.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.2d5d9923.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/css/main.355b4821.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/css/main.355b4821.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.2d5d9923.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.2d5d9923.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.2d5d9923.js.map" beforeDir="false" />
-    </list>
+    <list default="true" id="977497df-534d-4085-91e6-3823694a58bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669463498276</updated>
       <workItem from="1669463499295" duration="20000" />
-      <workItem from="1669473073144" duration="23136000" />
+      <workItem from="1669473073144" duration="23806000" />
     </task>
     <servers />
   </component>
