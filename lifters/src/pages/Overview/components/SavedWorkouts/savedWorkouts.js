@@ -10,7 +10,6 @@ function SavedWorkouts(props) {
             <div className='saved-wo-title'>
                 <h2>My Workouts</h2>
             </div>
-
             <div className='saved-wo-list'> 
                 <CardList items={props.workouts} handleDelete={props.handleDelete}/>             
             </div>   
