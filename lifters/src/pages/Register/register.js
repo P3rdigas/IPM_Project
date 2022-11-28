@@ -99,7 +99,6 @@ function RegisterPage() {
                                 </div>
                             </div>
                             <div className='register-right-colum'>
-                                <MdAccountCircle className='profile-photo-circle'/>
                                 <div className='register-form-field'>
                                     <label  className='gender-title-register'>Gender</label>
                                     <RadioGroup id='gender' onChange={handleGender} aria-labelledby="demo-controlled-radio-buttons-group" row  defaultValue="male" >

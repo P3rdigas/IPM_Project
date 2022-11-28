@@ -9,7 +9,7 @@ let sp = 0;
 const theme = createTheme({
   breakpoints: {
     keys: ["xs", "sm", "md", "lg", "xl", "xxl"],
-    values: {sm: 0, md: 1160, lg: 1580, xl: 1900}
+    values: {sm: 0, md: 1150, lg: 1200, xl: 1250}
   }
 });
 
@@ -29,17 +29,7 @@ function CardList(props) {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, []);
-
-  if(windowSize > 1160 && windowSize < 1580) {
-    sp=-65;
-  }
-  if(windowSize > 1580 && windowSize < 1900) {
-    sp=-30;
-  }
-  if(windowSize > 1900) {
-    sp=0;
-  }
-
+  
   const [buttonPopup, setButtonPopup] = useState(FALSE_ARRAY)
 
   const openPop = (index) => {
@@ -63,7 +53,7 @@ handleDelete={props.handleDelete}
       <ThemeProvider theme={theme}>
         <Grid container rowSpacing={4} spacing={sp}>
             {props.items.map((card, i) => (
-              <Grid item key={card.id} sm={12} md={6} lg={4} xl={3}>
+              <Grid item key={card.id} sm={12} md={6} lg={4} xl={3} xxl={2}>
                 <Grid>
                    <CardGym
                        id={card.id}
@@ -76,6 +66,7 @@ handleDelete={props.handleDelete}
                   
               </Grid> 
             ))}
+            {windowSize}
         </Grid>
         </ThemeProvider>
     </Container>    
