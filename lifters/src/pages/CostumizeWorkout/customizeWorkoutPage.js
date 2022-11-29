@@ -14,7 +14,7 @@ function CustomizeWorkoutPage() {
     return(
         <div className="customize-workout-page-global">
             <Navbar/>
-            <span className="explain-test-cw">Choose the muscles</span>
+            <span className="explain-test-cw">Choose the muscles and drag the exercises to the workout</span>
             <HumanModel3DCW muscles={muscles} setMuscles={setMuscles}/>
             <CardWorkoutCW  muscles={muscles} cards={cards} setCards={setCards}/>
         </div>

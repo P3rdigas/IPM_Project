@@ -33,8 +33,8 @@ function EditPopup(props) {
                                             <div className="exercise-kgs-card-gw">
                                             <input className="kgs-card-cw" min="0" type="number" placeholder='Kgs' required/>
                                             </div>
-                                            <div className="overview-reps-card-gw">
-                                                <span style={{fontSize: 24}}>{props.event.exercises[i].reps} reps</span>
+                                            <div className="overview-reps-card-gw-register">
+                                                <span style={{fontSize: 18}}>{props.event.exercises[i].reps} reps</span>
                                             </div>
                                                 
                                             </div>
