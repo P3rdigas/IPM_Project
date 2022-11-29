@@ -32,10 +32,10 @@ function Popup(props) {
                                 <span style={{fontSize: 24}}>{exercise.name}</span>
                                 <div className="overview-conj-reps-set-card-gw">
                                     <div className="overview-reps-card-gw">
-                                        <span text-align= 'center' style={{fontSize: 23}}>{exercise.reps} reps</span>
+                                        <span text-align= 'center' style={{fontSize: 19}}>{exercise.reps} reps</span>
                                     </div>
                                     <div className="overview-reps-card-gw">
-                                        <span style={{fontSize: 23}}>{exercise.sets} sets</span>
+                                        <span style={{fontSize: 19}}>{exercise.sets} sets</span>
                                     </div>
                                     <GrCircleInformation className="overview-info-icon-gw" size={35}/>
                                 </div>
