@@ -92,10 +92,10 @@ function CardGeneratedWorkout(props) {
                                 <span style={{fontSize: 24}}>{exercise.properties.exercise_name.value}</span>
                                 <div className="conj-reps-set-card-gw">
                                     <div className="reps-card-gw">
-                                        <span id="reps" style={{fontSize: 19}}>{reps[i] + " reps"}</span>
+                                        <span id="reps" style={{fontSize: 18}}>{reps[i] + " reps"}</span>
                                     </div>
                                     <div className="reps-card-gw">
-                                        <span id="sets" style={{fontSize: 19}}>{sets[i] + " sets"}</span>
+                                        <span id="sets" style={{fontSize: 18}}>{sets[i] + " sets"}</span>
                                     </div>
                                     <GrCircleInformation className="info-icon-gw"/>
                                 </div>
