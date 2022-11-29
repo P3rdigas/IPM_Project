@@ -9,8 +9,15 @@ function SavedWorkouts(props) {
             <div className='saved-wo-title'>
                 <h2>My Workouts</h2>
             </div>
-            <div className='saved-wo-list'> 
-                <CardList items={props.workouts} handleDeleteCardsSW={props.handleDeleteCardsSW}/>
+            <div className='saved-wo-list'>
+                {
+                (props.workouts.length > 0) ?
+                    <CardList items={props.workouts} handleDeleteCardsSW={props.handleDeleteCardsSW}/>
+                    :
+                    <div>
+                        <span style={{fontSize: 20}} >You dont have any saved workouts</span>
+                    </div>
+                }
             </div>   
         </div>
     )
