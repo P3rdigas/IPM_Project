@@ -44,7 +44,7 @@ function Popup(props) {
                     </div>
                     <div className="overview-conj-save-reload-buttons">
                         <div className="overview-reload-card-gw">
-                            <Link to="/">
+                            <Link to="/customize_workout">
                                 <AiFillEdit className="exercise-edit-bt" size={50}/>
                             </Link>
                         </div>

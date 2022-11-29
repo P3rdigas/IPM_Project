@@ -36,10 +36,8 @@ function HumanModel3DCW(props){
     const [exercises, setExercises] = useState([])
 
     useEffect(()=>{
-        console.log(props.muscles)
         if (props.muscles.length > 0){
             const muscleslist = props.muscles.toString().replaceAll(',', '_')
-            console.log(muscleslist)
             fetch(`/rest/exercises/${muscleslist}`, {
                 method: 'GET',
                 headers: { "Content-Type": "application/json" }

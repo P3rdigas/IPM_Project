@@ -21,7 +21,6 @@ function PopUPSaveCW(props){
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(workout)
         }).then(response => {
-            console.log(response)
             setIsPending(false)
             if(response.ok) {
                 alert("Workout added successfully")
