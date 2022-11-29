@@ -17,6 +17,7 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
 import com.google.gson.Gson;
+import pt.unl.fct.di.lifters.utils.InjuryData;
 import pt.unl.fct.di.lifters.utils.WorkoutData;
 
 @Path("/{username}")
@@ -60,6 +61,108 @@ public class UsersResource {
             txn.commit();
 
             return Response.ok(g.toJson(property)).build();
+
+        } finally {
+            if (txn.isActive())
+                txn.rollback();
+        }
+    }
+
+    @GET
+    @Path("/injuries")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response getInjuries(@PathParam("username") String username) {
+
+        Key userKey = datastore.newKeyFactory().setKind("User").newKey(username);
+
+        Transaction txn = datastore.newTransaction();
+
+        try {
+
+            Entity user = txn.get(userKey);
+
+            if (user == null) {
+                txn.rollback();
+                return Response.status(Status.NOT_FOUND).entity("User doesn't exists.").build();
+            }
+
+            List<Entity> list = new ArrayList<>();
+
+            Query<Entity> query = Query.newEntityQueryBuilder().setKind("Injuries")
+                    .setFilter(PropertyFilter.eq("injury_user", username)).build();
+
+            QueryResults<Entity> logs = datastore.run(query);
+
+            logs.forEachRemaining(exercise -> {
+                list.add(exercise);
+            });
+
+            txn.commit();
+
+            return Response.ok(g.toJson(list)).build();
+
+        } finally {
+            if (txn.isActive())
+                txn.rollback();
+        }
+    }
+
+    @POST
+    @Path("/injury")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addInjury(@PathParam("username") String username, InjuryData data) {
+
+        Key userKey = datastore.newKeyFactory().setKind("User").newKey(username);
+
+        Key injuryKey = datastore.allocateId(datastore.newKeyFactory().setKind("Injuries").newKey());
+
+        Transaction txn = datastore.newTransaction();
+
+        try {
+
+            Entity user = txn.get(userKey);
+
+            if (user == null) {
+                txn.rollback();
+                return Response.status(Status.NOT_FOUND).entity("User doesn't exists.").build();
+            }
+
+            Entity property = Entity.newBuilder(injuryKey).set("injury_user", username)
+                    .set("injury_muscle", data.getMuscle())
+                    .set("injury_seriousness", data.getSeriousness())
+                    .set("injury_start", data.getStartDate())
+                    .set("injury_end", data.getEndDate())
+                    .build();
+
+            txn.add(property);
+            txn.commit();
+
+            return Response.ok(g.toJson(property)).build();
+
+        } finally {
+            if (txn.isActive())
+                txn.rollback();
+        }
+    }
+
+    @DELETE
+    @Path("/injury/{id}")
+    public Response deleteInjury(@PathParam("username") String username, @PathParam("id") String injuryID) {
+        Key injuryKey = datastore.newKeyFactory().setKind("Injuries").newKey(Long.parseLong(injuryID));
+
+        Transaction txn = datastore.newTransaction();
+
+        try {
+            Entity workout = txn.get(injuryKey);
+
+            if(workout == null) {
+                txn.rollback();
+                return Response.status(Status.NOT_FOUND).entity("Injury doesn't exists.").build();
+            }
+
+            txn.delete(injuryKey);
+            txn.commit();
+            return Response.ok().build();
 
         } finally {
             if (txn.isActive())
@@ -120,6 +223,7 @@ public class UsersResource {
             }
 
             txn.delete(workoutKey);
+            txn.commit();
             return Response.ok().build();
 
         } finally {

@@ -90,8 +90,6 @@ function Calendar() {
 
   const handleChange = (id, title, date, exercises) => {
     setNewArray([...newArray, {id: id, title:title, start:date, exercises:exercises}])
-    console.log(newArray)
-
   }  
 
   const closePop = () => {
@@ -115,11 +113,6 @@ function Calendar() {
           kgS.push([])
         }
         for(let j = 0; j < SAVED_WORKOUTS[i].exercises.length; j++) {
-
-          
-
-          console.log(SAVED_WORKOUTS[i].exercises[j].kgPerSet.length)
-          console.log(SAVED_WORKOUTS[i].exercises[j].sets)
           if(SAVED_WORKOUTS[i].exercises[j].kgPerSet.length != SAVED_WORKOUTS[i].exercises[j].sets) {
             for(let k = 0; k < SAVED_WORKOUTS[i].exercises[j].sets; k++) {   
               SAVED_WORKOUTS[i].exercises[j].kgPerSet.push("")
@@ -131,17 +124,10 @@ function Calendar() {
         exercises = SAVED_WORKOUTS[i].exercises
       }
     }
-    console.log(kgS)
-
-
-
-
-
 
     setEventInfo(item => item= {id:agrs.id, title:agrs.title, start:format(agrs.start, "yyyy/MM/dd"), exercises:exercises})
 
   }
-
     return (
         <div>
             <div onClick={() => setButtonPopup(true)} className='button-add-wo'>
@@ -167,7 +153,6 @@ function Calendar() {
             <EditPopup trigger={buttonPopup2} setTrigger={() => closePop2()} allWO ={SAVED_WORKOUTS} event={eventInfo} allKgSets={kgS}></EditPopup>
       </div>
     );
-
 }
 
 export default Calendar

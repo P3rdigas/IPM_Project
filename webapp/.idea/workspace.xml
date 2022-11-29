@@ -5,26 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="977497df-534d-4085-91e6-3823694a58bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/utils/InjuryData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lifters/src/pages/InjuriesPage/components/InjuriesSelect/injuriesSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lifters/src/pages/InjuriesPage/components/InjuriesSelect/injuriesSelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lifters/src/pages/Overview/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lifters/src/pages/Overview/overview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/resources/UsersResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/resources/UsersResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/utils/WorkoutData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/unl/fct/di/lifters/utils/WorkoutData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.156922c1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.156922c1.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.156922c1.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/body.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/image-slider-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/image-slider-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/image-slider-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/main.da4143f7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/main.da4143f7.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.3fe4c898.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.3fe4c898.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/main.3fe4c898.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/Logo.966c24e32ee6658d3c16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/Logo_Branco.a00c5089d9b1622a9759.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/bicep.1f1465867d53da6ba3b5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/hero.ac08b7db5bb62a037125.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/nova_icon.eeafafa5deb6e7755276.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/pernas.14afd07dd015ee52bc18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/user1.6d7456eeb1c497d422ae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/user2.7f89c6144bd2c6d9f509.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/media/user3.80075ddf14a8f6704998.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/appengine-generated/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/WEB-INF/classes/source-context.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/__static__/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/__static__/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/css/main.da4143f7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/css/main.da4143f7.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.3fe4c898.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.3fe4c898.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/js/main.3fe4c898.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/media/bicep.1f1465867d53da6ba3b5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/__static__/static/media/pernas.14afd07dd015ee52bc18.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/app.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/appengine-staging/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/appengine-staging/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/css/main.da4143f7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/css/main.da4143f7.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.3fe4c898.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.3fe4c898.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/js/main.3fe4c898.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/media/bicep.1f1465867d53da6ba3b5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/appengine-staging/static/media/pernas.14afd07dd015ee52bc18.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/resources/UsersResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/WEB-INF/classes/pt/unl/fct/di/lifters/utils/WorkoutData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/css/main.da4143f7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/css/main.da4143f7.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.3fe4c898.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.3fe4c898.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/js/main.3fe4c898.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/media/bicep.1f1465867d53da6ba3b5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/lifterswebapp-0.1.0-SNAPSHOT/static/media/pernas.14afd07dd015ee52bc18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +91,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/CIAI_PROJECT",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CIAI_PROJECT&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />

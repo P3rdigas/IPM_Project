@@ -8,6 +8,7 @@ import { FiTrash2 } from "react-icons/fi";
 import './cardGym.css'
 
 function CardGym(props) {
+  const DELIMITER = "___"
   return (
     <div className='cardf'>
     <Card sx={{ minWidth: 250, maxWidth:250, minHeight: 230, maxHeight:230}}>
@@ -15,9 +16,11 @@ function CardGym(props) {
         <Typography gutterBottom variant="h5" component="div">
           {props.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          <br>{props.tags}</br>
-        </Typography>
+          {props.tags.split(DELIMITER).map((tag, i) => (
+            <Typography key={i} variant="body2" color="text.secondary">
+              {tag}
+          </Typography>
+          ))}
       </CardContent>
       <CardActions>
         <FiTrash2 className='workout-card-trashcan' onClick={() => props.handleDeleteCardsSW(props.id)}/>

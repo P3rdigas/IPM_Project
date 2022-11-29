@@ -30,16 +30,60 @@ function InjuriesSelect(props) {
         }
     ]);
     const [open, setOpen] = useState(false)
+    const username = sessionStorage.getItem("username")
 
-    const handleChange = (id,name, s, n, m, fun) => {
+    const handleChange = (id, name, s, n, m, fun) => {
         if(fun === 'add') {
-            setNewArray(newArray => [...newArray, {id:id, name: name, seriousness:s, startDate:n, endDate:m}])
+            const injury = {
+                username: username,
+                muscle: name,
+                seriousness: s,
+                startDate: n,
+                endDate: m
+            }
+
+            fetch(`/rest/${username}/injury`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(injury)
+            }).then(response => {
+                if(response.ok) 
+                    return response.json()
+            }).then(data => {
+                alert("Injury inserted")
+                setNewArray(newArray => [...newArray, {id: data.key.path[0].id, name: name, seriousness: s, startDate: n, endDate:m}])
+            })
         }
         else {
-            setNewArray(injury => injury.filter((item, i) => (item.id !== id)));
+            fetch(`/rest/${username}/injury/${id}`, {
+                method: 'DELETE',
+                headers: { "Content-Type": "application/json" }
+            }).then(response => {
+                if(response.ok) {
+                    alert("Injury deleted")
+                    setNewArray(injury => injury.filter((item, i) => (item.id !== id)));
+                } 
+            })
         }
-        
     }
+
+    useEffect (() => {
+        fetch(`/rest/${username}/injuries`, {
+            method: 'GET',
+            headers: { "Content-Type": "application/json" }
+        }).then(response => {
+            if(response.ok) 
+                return response.json()
+        }).then(data => {
+            let injuries = []
+            for(let i = 0; i < data.length; i++) {
+                let injury = data[i].properties
+                injuries.push({id: data[i].key.path[0].id, name: injury.injury_muscle.value, seriousness: injury.injury_seriousness.value, 
+                    startDate: injury.injury_start.value, endDate: injury.injury_end.value})
+            }
+            setNewArray(injuries)
+        })
+    }, [])
 
     useEffect (() => {
         document.addEventListener("keydown", hideOnEscape, true)
@@ -105,7 +149,7 @@ function InjuriesSelect(props) {
                 ):""
             }
             </div>
-            <div className='injuries-s-button' onClick={()=> handleChange(newArray.length,props.parts, selected, selected3, selected2, 'add')}>
+            <div className='injuries-s-button' onClick={()=> handleChange(newArray.length, props.parts, selected, selected3, selected2, 'add')}>
                     <span style={{fontSize: 24}}>Confirm</span>
             </div>
             <div className='injuries-s-box2'>
@@ -127,8 +171,6 @@ function InjuriesSelect(props) {
                         </div>
                     </div>
                 ))}
-                
-                
             </div>
         </div>
     );
