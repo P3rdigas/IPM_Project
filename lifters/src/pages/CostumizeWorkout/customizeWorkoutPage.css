@@ -1,2 +1,9 @@
 .customize-workout-page-global{
 }
+.explain-test-cw{
+    position: fixed;
+    margin: 2% 0 0 2%;
+    left: 40%;
+    z-index: 1;
+    font-size: 30px;
+}

@@ -31,7 +31,7 @@
 .information-text p:nth-child(3) {
     font-size: 1.8rem;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 @media screen and (max-width:940px) {

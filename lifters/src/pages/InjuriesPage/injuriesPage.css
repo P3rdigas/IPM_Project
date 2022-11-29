@@ -2,3 +2,9 @@
     top:15%;
     left:50%;
 }
+
+.explain-test-injuries{
+    position: fixed;
+    margin: 2% 0 0 2%;
+    font-size: 30px;
+}

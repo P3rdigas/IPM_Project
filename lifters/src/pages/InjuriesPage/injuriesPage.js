@@ -10,6 +10,7 @@ function InjuriesPage() {
     return(
         <div>
             <Navbar/>
+            <span className="explain-test-injuries">Choose the muscle that is injured</span>
             <HumanModel3DInjuries muscle={muscle} setMuscle={setMuscle}/>
             <InjuriesSelect parts={muscle}/>
             

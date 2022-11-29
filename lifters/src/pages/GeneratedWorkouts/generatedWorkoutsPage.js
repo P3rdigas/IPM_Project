@@ -24,6 +24,7 @@ function GeneratedWorkoutsPage() {
     return(
         <div>
             <Navbar/>
+            <span className="explain-test-gw">Choose the muscles you want to train</span>
             <HumanModel3DGW handleSetMuscle={handleSetMuscle} handleDelete={handleDelete} muscles={muscles}/>
             <CardGeneratedWorkout muscles={muscles}/>
         </div>
